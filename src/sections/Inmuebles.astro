@@ -1,0 +1,192 @@
+---
+import { Image } from "astro:assets";
+
+import torreCem from "../images/torre-cem.jpg";
+import chilemex from "../images/chilemex.jpg";
+import centroGuayana from "../images/centro-empresarial-guayana.jpg";
+import centroGuayana2 from "../images/centro-empresarial-guayana-2.jpg";
+---
+
+<style>
+    section {
+        background-color: #f3f3f3;
+    }
+
+    .inmuebles {
+        padding: 4rem 1rem;
+        max-width: 1216px;
+        margin: 0 auto;
+    }
+
+    .inmuebles-intro {
+        margin-bottom: 2rem;
+    }
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+
+    .card {
+        background-color: #ffffff;
+    }
+    .card-info {
+        padding: 1rem;
+    }
+
+    .card-info p {
+        margin-bottom: 1rem;
+    }
+
+    .card-info a{
+        text-decoration: none;
+    }
+
+    .slider-buttons {
+        border: 1px solid red;
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+        display: none;
+    }
+
+    .slider-buttons button {
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        cursor: pointer;
+    }
+    .slider-buttons .back {
+        transform: rotate(180deg)
+    }
+</style>
+
+<section>
+    <div class="inmuebles">
+        <div class="inmuebles-intro">
+            <h2>Inmuebles disponibles en Puerto Ordaz</h2>
+            <p>
+                Actualmente gestionamos cuatro edificios de uso múltiple,
+                diseñados para satisfacer las necesidades de negocios, oficinas
+                y locales comerciales.
+            </p>
+        </div>
+
+        <div class="cards">
+            <section class="splide" aria-label="Splide Basic HTML Example">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide card">
+                            <Image
+                                src={torreCem}
+                                alt="Cantera La Danta"
+                                width={800}
+                                height={600}
+                            />
+                            <div class="card-info">
+                                <p>Torre Corporación Empresas Morgado</p>
+                                <a href="#">Saber más</a>
+                            </div>
+                        </li>
+                        <li class="splide__slide card">
+                            <Image
+                                src={chilemex}
+                                alt="Cantera La Danta"
+                                width={800}
+                                height={600}
+                            />
+                            <div class="card-info">
+                                <p>Centro Empresarial Guayana</p>
+                                <a href="#">Saber más</a>
+                            </div>
+                        </li>
+                        <li class="splide__slide card">
+                            <Image
+                                src={centroGuayana}
+                                alt="Cantera La Danta"
+                                width={800}
+                                height={600}
+                            />
+                            <div class="card-info">
+                                <p>Centro Comercial Chilemex</p>
+                                <a href="#">Saber más</a>
+                            </div>
+                        </li>
+                        <li class="splide__slide card">
+                            <Image
+                                src={centroGuayana2}
+                                alt="Cantera La Danta"
+                                width={800}
+                                height={600}
+                            />
+                            <div class="card-info">
+                                <p>Centro Comercial Caura</p>
+                                <a href="#">Saber más</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <div class="slider-buttons">
+            <button class="back">
+                <svg
+                    width="48"
+                    height="48"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <circle cx="24" cy="24" r="24" fill="#222973"></circle>
+                    <path
+                        d="M15.75 24L32.25 24"
+                        stroke="white"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    <path
+                        d="M25.5 17.25L32.25 24L25.5 30.75"
+                        stroke="white"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </svg></button
+            >
+            <button class="forward">
+                <svg
+                    width="48"
+                    height="48"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <circle cx="24" cy="24" r="24" fill="#222973"></circle>
+                    <path
+                        d="M15.75 24L32.25 24"
+                        stroke="white"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    <path
+                        d="M25.5 17.25L32.25 24L25.5 30.75"
+                        stroke="white"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", function () {
+        var splide = new Splide(".splide", {
+            type: "loop",
+            perPage: 1,
+            perMove: 1,
+            arrows: false,
+            pagination: false,
+        });
+        splide.mount();
+    });
+</script>
