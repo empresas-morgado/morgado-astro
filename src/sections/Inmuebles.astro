@@ -10,6 +10,8 @@ import centroGuayana2 from "../images/centro-empresarial-guayana-2.jpg";
 <style>
     section {
         background-color: #f3f3f3;
+        /* border: 1px solid red; */
+        overflow: hidden;
     }
 
     .inmuebles {
@@ -31,14 +33,30 @@ import centroGuayana2 from "../images/centro-empresarial-guayana-2.jpg";
     }
     .card-info {
         padding: 1rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .card-info p {
         margin-bottom: 1rem;
     }
 
-    .card-info a{
+    .card-info a {
         text-decoration: none;
+        border-radius: 22px;
+        border: 1px solid #ccc;
+        padding: 0.5rem 1rem;
+        color: #505050;
+
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .card-info a svg {
+        transform: translateY(1px);
     }
 
     .slider-buttons {
@@ -56,7 +74,7 @@ import centroGuayana2 from "../images/centro-empresarial-guayana-2.jpg";
         cursor: pointer;
     }
     .slider-buttons .back {
-        transform: rotate(180deg)
+        transform: rotate(180deg);
     }
 </style>
 
@@ -84,7 +102,19 @@ import centroGuayana2 from "../images/centro-empresarial-guayana-2.jpg";
                             />
                             <div class="card-info">
                                 <p>Torre Corporación Empresas Morgado</p>
-                                <a href="#">Saber más</a>
+                                <a href="#"
+                                    >Saber más <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M8.75572 13.0909L7.88072 12.2273L11.483 8.62503H2.15344V7.37503H11.483L7.88072 3.78412L8.75572 2.90912L13.8466 8.00003L8.75572 13.0909Z"
+                                            fill="#505050"></path>
+                                    </svg></a
+                                >
                             </div>
                         </li>
                         <li class="splide__slide card">
@@ -96,7 +126,19 @@ import centroGuayana2 from "../images/centro-empresarial-guayana-2.jpg";
                             />
                             <div class="card-info">
                                 <p>Centro Empresarial Guayana</p>
-                                <a href="#">Saber más</a>
+                                <a href="#"
+                                    >Saber más <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M8.75572 13.0909L7.88072 12.2273L11.483 8.62503H2.15344V7.37503H11.483L7.88072 3.78412L8.75572 2.90912L13.8466 8.00003L8.75572 13.0909Z"
+                                            fill="#505050"></path>
+                                    </svg></a
+                                >
                             </div>
                         </li>
                         <li class="splide__slide card">
@@ -108,7 +150,19 @@ import centroGuayana2 from "../images/centro-empresarial-guayana-2.jpg";
                             />
                             <div class="card-info">
                                 <p>Centro Comercial Chilemex</p>
-                                <a href="#">Saber más</a>
+                                <a href="#"
+                                    >Saber más <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M8.75572 13.0909L7.88072 12.2273L11.483 8.62503H2.15344V7.37503H11.483L7.88072 3.78412L8.75572 2.90912L13.8466 8.00003L8.75572 13.0909Z"
+                                            fill="#505050"></path>
+                                    </svg></a
+                                >
                             </div>
                         </li>
                         <li class="splide__slide card">
@@ -120,7 +174,19 @@ import centroGuayana2 from "../images/centro-empresarial-guayana-2.jpg";
                             />
                             <div class="card-info">
                                 <p>Centro Comercial Caura</p>
-                                <a href="#">Saber más</a>
+                                <a href="#"
+                                    >Saber más <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M8.75572 13.0909L7.88072 12.2273L11.483 8.62503H2.15344V7.37503H11.483L7.88072 3.78412L8.75572 2.90912L13.8466 8.00003L8.75572 13.0909Z"
+                                            fill="#505050"></path>
+                                    </svg></a
+                                >
                             </div>
                         </li>
                     </ul>
@@ -186,6 +252,14 @@ import centroGuayana2 from "../images/centro-empresarial-guayana-2.jpg";
             perMove: 1,
             arrows: false,
             pagination: false,
+            fixedWidth: "384px",
+            gap: "1rem",
+            breakpoints: {
+                mediaQuery: 'min',
+                900: {
+                    fixedWidth: "260px",
+                },
+            },
         });
         splide.mount();
     });
