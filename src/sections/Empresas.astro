@@ -72,12 +72,13 @@ import somixImage from "../images/somix.jpg";
         border-radius: 22px;
     }
 
-    .empresas-links button {
+    .empresas-links a.contacto {
         background-color: transparent;
         border: 1px solid #cccccc;
+        color: #505050;
     }
 
-    .empresas-links a {
+    .empresas-links a.mas {
         background-color: var(--blue);
         color: #ffffff;
         text-decoration: none;
@@ -96,6 +97,10 @@ import somixImage from "../images/somix.jpg";
         justify-content: flex-end;
         padding: 2rem 0;
         gap: 1rem;
+
+        color: #505050;
+        text-decoration: none;
+        text-align: right;
     }
 
     @media only screen and (min-width: 600px) {
@@ -164,8 +169,8 @@ import somixImage from "../images/somix.jpg";
                     el concreto asfaltico.
                 </p>
                 <div class="empresas-links">
-                    <button class="contacto">Entrar en contacto</button>
-                    <a href="#"
+                    <a class="contacto">Entrar en contacto</a>
+                    <a class="mas" href="#"
                         >Saber más <svg
                             width="12"
                             height="12"
@@ -204,8 +209,8 @@ import somixImage from "../images/somix.jpg";
                     entrega a tiempo en las obras ejecutadas por el cliente.
                 </p>
                 <div class="empresas-links">
-                    <button class="contacto">Entrar en contacto</button>
-                    <a href="#"
+                    <a class="contacto">Entrar en contacto</a>
+                    <a class="mas" href="#"
                         >Saber más <svg
                             width="12"
                             height="12"
@@ -231,7 +236,7 @@ import somixImage from "../images/somix.jpg";
             </div>
         </div>
 
-        <div class="descubre">
+        <a href="#" class="descubre">
             <p>Descubre más sobre nuestra historia empresarial</p>
             <svg
                 width="48"
@@ -254,6 +259,6 @@ import somixImage from "../images/somix.jpg";
                     stroke-linecap="round"
                     stroke-linejoin="round"></path>
             </svg>
-        </div>
+        </a>
     </div>
 </section>
