@@ -76,6 +76,37 @@ import centroGuayana2 from "../images/centro-empresarial-guayana-2.jpg";
     .slider-buttons .back {
         transform: rotate(180deg);
     }
+
+    @media only screen and (min-width: 600px){
+        .inmuebles{
+            padding: 6rem 2rem;
+        }
+
+        .inmuebles-intro{
+            margin-bottom: 4rem;
+        }
+
+        h2{
+            margin-bottom: 2rem;
+        }
+    }
+
+
+    @media only screen and (min-width: 900px){
+        .inmuebles-intro{
+            display: flex;
+            gap: 4rem;
+        }
+
+        .inmuebles-intro > *{
+            flex: 1;
+        }
+
+        h2{
+            font-size: 3rem;
+            margin-bottom: 0;
+        }
+    }
 </style>
 
 <section>

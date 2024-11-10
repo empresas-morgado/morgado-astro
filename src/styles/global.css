@@ -44,7 +44,7 @@
 	text-wrap: pretty;
   }
   h1, h2, h3, h4, h5, h6 {
-	text-wrap: balance;
+	/* text-wrap: balance; */
   }
   
   /*
@@ -119,11 +119,11 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
+	/* background: linear-gradient(var(--gray-gradient)) no-repeat; */
 	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
+	/* color: rgb(var(--gray-dark)); */
 	font-size: 16px;
-	line-height: 1.7;
+	line-height: 1.75;
 }
 main {
 	width: 720px;
@@ -152,7 +152,7 @@ h2 {
 	font-size: 2rem;
 }
 h3 {
-	font-size: 1.953em;
+	font-size: 2rem;
 }
 h4 {
 	font-size: 1.563em;

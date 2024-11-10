@@ -1,0 +1,99 @@
+---
+import { getCollection, getEntry } from "astro:content";
+
+// Get all entries from a collection.
+// Requires the name of the collection as an argument.
+// Example: retrieve `src/content/blog/**`
+const allBlogPosts = await getCollection("noticias");
+---
+
+<style>
+    section {
+        padding: 4rem 1rem;
+        max-width: 1216px;
+        margin: 0 auto;
+
+        background: #F3F3F3;
+    }
+
+    h2{
+        margin-bottom: 2rem;
+    }
+
+
+
+    .numero-1{
+        display: none;
+    }
+
+    .numero-2{
+        display: none;
+    }
+
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .noticia{
+        background-color: #fff;
+    }
+
+    .info-noticia{
+        padding: 1rem;
+    }
+
+    h4{
+        font-size: 1rem;
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        line-height: 1.5;
+    }
+
+    @media only screen and (min-width: 600px){
+
+        .numero-1{
+            display: block;
+        }
+
+    }
+</style>
+
+<section>
+    <div class="noticias">
+        <h2>Noticias y comunicados</h2>
+    </div>
+
+    <div class="lista-de-noticias">
+        <ul>
+            {
+                allBlogPosts
+                    .sort(
+                        (a, b) =>
+                            new Date(b.data.pubDate).getTime() -
+                            new Date(a.data.pubDate).getTime(),
+                    )
+                    .slice(0, 3)
+                    .map((post, index) => (
+                        <li class={"noticia numero-"+ index.toString()}>
+                            <a href={`/blog/${post.slug}/`}>
+                                <img
+                                    width={720}
+                                    height={360}
+                                    src={post.data.heroImage}
+                                    alt={post.data.title}
+                                />
+                                <div class="info-noticia">
+                                <h4 class="title">{post.data.title}</h4>
+                                <p class="date">
+                                    <p>{post.data.pubDate}</p>
+                                </p>
+                                </div>
+                            </a>
+                        </li>
+                    ))
+            }
+        </ul>
+    </div>
+</section>
