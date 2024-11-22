@@ -1,85 +1,113 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../consts";
 ---
+
+<style>
+	nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		padding: 0.75rem 1rem;
+	}
+
+	.internal-links {
+		display: none;
+	}
+	.hamburger {
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+
+		width: 22px;
+
+	}
+
+	.hamburger div {
+		width: 100%;
+		height: 2px;
+		background-color: #333333;
+		border-radius: 6px;
+	}
+</style>
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<a href="/" class="logo"
+			><svg
+				width="114"
+				height="32"
+				viewBox="0 0 114 32"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<rect y="5.33325" width="24" height="21.3333" fill="#AD253A"
+				></rect>
+				<rect
+					x="26"
+					y="5.33325"
+					width="88"
+					height="21.3333"
+					fill="#3351B6"></rect>
+				<path
+					d="M2 9.33325C2 8.22868 2.89543 7.33325 4 7.33325H6V24.6666H4C2.89543 24.6666 2 23.7712 2 22.6666V9.33325Z"
+					fill="white"></path>
+				<path
+					d="M28 9.33325C28 8.22868 28.8954 7.33325 30 7.33325H32V24.6666H30C28.8954 24.6666 28 23.7712 28 22.6666V9.33325Z"
+					fill="white"></path>
+				<path
+					d="M68 7.33325C69.1046 7.33325 70 8.22868 70 9.33325L70 11.3333L50 11.3333L50 7.33325L68 7.33325Z"
+					fill="white"></path>
+				<path
+					d="M22 7.33325L22 11.3333L2 11.3333L2 9.33325C2 8.22868 2.89543 7.33325 4 7.33325L22 7.33325Z"
+					fill="white"></path>
+				<path
+					d="M48 7.33325L48 11.3333L28 11.3333L28 9.33325C28 8.22868 28.8954 7.33325 30 7.33325L48 7.33325Z"
+					fill="white"></path>
+				<path
+					d="M70 24.6667L66 24.6667L66 7.33341L68 7.33341C69.1046 7.33341 70 8.22884 70 9.33341L70 24.6667Z"
+					fill="white"></path>
+				<path d="M48 14L48 18L28 18L28 14L48 14Z" fill="white"></path>
+				<path
+					d="M62 24.6667L58 24.6667L58 7.33341L62 7.33341L62 24.6667Z"
+					fill="white"></path>
+				<path
+					d="M22 20.6667L22 24.6667L4 24.6667C2.89543 24.6667 2 23.7713 2 22.6667L2 20.6667L22 20.6667Z"
+					fill="white"></path>
+				<path
+					d="M48 20.6667L48 24.6667L30 24.6667C28.8954 24.6667 28 23.7713 28 22.6667L28 20.6667L48 20.6667Z"
+					fill="white"></path>
+				<path
+					d="M54 24.6667L50 24.6667L50 7.33341L54 7.33341L54 24.6667Z"
+					fill="white"></path>
+				<circle cx="90" cy="16" r="16" fill="white"></circle>
+				<circle cx="89.9997" cy="15.9999" r="14.6667" fill="white"
+				></circle>
+				<circle
+					cx="89.9997"
+					cy="15.9999"
+					r="14.1667"
+					fill="white"
+					stroke="black"></circle>
+				<path
+					fill-rule="evenodd"
+					clip-rule="evenodd"
+					d="M100.037 26.6942L90.1647 17.204H79.8282C79.7722 17.2077 79.1998 17.2514 78.9577 17.4842C78.703 17.7292 78.666 18.3257 78.666 18.3257V17.204V17.2037V13.9718C78.666 12.0388 80.233 10.4718 82.166 10.4718H84.2894L84.2896 10.4716H86.2549C86.2548 10.7246 86.2993 10.9761 86.3867 11.2155C86.4904 11.4991 86.6522 11.7598 86.8627 11.9822C87.0731 12.2045 87.3279 12.384 87.6119 12.5098C87.8959 12.6357 88.2034 12.7054 88.5159 12.7149C88.8285 12.7243 89.1398 12.6733 89.4315 12.5648C89.7232 12.4563 89.9892 12.2926 90.2138 12.0834C90.4383 11.8742 90.6169 11.6238 90.7388 11.3469C90.8608 11.0701 90.9236 10.7725 90.9236 10.4719H89.7564C89.7564 10.6222 89.725 10.771 89.664 10.9094C89.6031 11.0478 89.5138 11.1731 89.4015 11.2777C89.2892 11.3823 89.1562 11.4641 89.0104 11.5184C88.8645 11.5726 88.7089 11.5981 88.5526 11.5934C88.3963 11.5887 88.2426 11.5538 88.1006 11.4909C87.9586 11.4279 87.8312 11.3382 87.726 11.227C87.6207 11.1159 87.5398 10.9855 87.488 10.8437C87.4443 10.724 87.422 10.5982 87.4221 10.4716H90.922V9.34961H85.5094L87.3392 7.6665H99.9677L96.1737 11.1563V11.4862L104.295 19.2934C103.633 22.1774 102.121 24.737 100.037 26.6942Z"
+					fill="black"></path>
+			</svg>
+		</a>
+
+		<div class="hamburger">
+				<div></div>
+				<div></div>
+				<div></div>
+		</div>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
 		</div>
-		<div class="social-links">
-			<a href="https://m.webtoo.ls/@astro" target="_blank">
-				<span class="sr-only">Follow Astro on Mastodon</span>
-				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
-					><path
-						fill="currentColor"
-						d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"
-					></path></svg
-				>
-			</a>
-			<a href="https://twitter.com/astrodotbuild" target="_blank">
-				<span class="sr-only">Follow Astro on Twitter</span>
-				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
-					><path
-						fill="currentColor"
-						d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
-					></path></svg
-				>
-			</a>
-			<a href="https://github.com/withastro/astro" target="_blank">
-				<span class="sr-only">Go to Astro's GitHub repo</span>
-				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
-					><path
-						fill="currentColor"
-						d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-					></path></svg
-				>
-			</a>
-		</div>
 	</nav>
 </header>
-<style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
 
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
-	}
-</style>
