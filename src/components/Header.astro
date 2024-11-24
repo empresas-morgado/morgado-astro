@@ -7,7 +7,6 @@ import { SITE_TITLE } from "../consts";
 	nav {
 		position: relative;
 		background-color: #f3f3f3;
-
 	}
 	.header {
 		display: flex;
@@ -19,7 +18,7 @@ import { SITE_TITLE } from "../consts";
 		position: relative;
 		z-index: 100;
 
-		background-color: #F3F3F3;
+		background-color: #f3f3f3;
 	}
 
 	.hamburger {
@@ -46,7 +45,6 @@ import { SITE_TITLE } from "../consts";
 
 		top: -100vh;
 
-
 		padding: 2rem 1rem;
 
 		background-color: #ffffff;
@@ -56,9 +54,34 @@ import { SITE_TITLE } from "../consts";
 	}
 
 	.menu-link {
-		
+		color: #505050;
+		text-decoration: none;
+		border-bottom: 1px solid #CCCCCC;
+
+		padding: 0.5rem;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 
+	.empresas-list{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.empresas-list a{
+		text-decoration: none;
+		color: #505050;
+		padding: 0.5rem;
+
+		border-bottom: 1px solid #CCCCCC;
+	}
+
+	.active{
+		visibility: visible;
+		height: auto;
+	}
 </style>
 
 <header>
@@ -136,16 +159,70 @@ import { SITE_TITLE } from "../consts";
 			</div>
 		</div>
 		<div class="menu-links">
-			<!-- <HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink> -->
-
-			<a class="menu-link" href="/">Nosotros</a>
-			<a class="menu-link" href="/blog">Blog</a>
-			<a class="menu-link" href="/about">About</a>
+			<a class="menu-link" href="/">
+				Nosotros
+				<svg
+					width="16"
+					height="16"
+					viewBox="0 0 16 16"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M8.75559 13.091L7.88059 12.2274L11.4829 8.62509H2.15332V7.37509H11.4829L7.88059 3.78418L8.75559 2.90918L13.8465 8.00009L8.75559 13.091Z"
+						fill="#505050"></path>
+				</svg>
+			</a>
+			<p id="menu-link-empresas" class="menu-link active">
+				Empresas <svg
+					width="16"
+					height="16"
+					viewBox="0 0 16 16"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M13 6L8 11L3 6"
+						stroke="#505050"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
+				</svg>
+			</p>
+			<div class="empresas-list">
+				<a href="/empresas/cantera-la-danta">Cantera La Danta</a>
+				<a href="/empresas/somix">Somix</a>
+			</div>
+			<a class="menu-link" href="/about"
+				>Inmuebles <svg
+					width="16"
+					height="16"
+					viewBox="0 0 16 16"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M13 6L8 11L3 6"
+						stroke="#505050"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
+				</svg></a
+			>
+			<a class="menu-link" href="/noticias">
+				Noticias
+				<svg
+					width="16"
+					height="16"
+					viewBox="0 0 16 16"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M8.75559 13.091L7.88059 12.2274L11.4829 8.62509H2.15332V7.37509H11.4829L7.88059 3.78418L8.75559 2.90918L13.8465 8.00009L8.75559 13.091Z"
+						fill="#505050"></path>
+				</svg>
+			</a>
 		</div>
 	</nav>
-	
 </header>
 
 <script>
@@ -156,26 +233,16 @@ import { SITE_TITLE } from "../consts";
 	let menuOpen = false;
 
 	// Initialize the timelines without animation
-	// let menuOpenTl = gsap.timeline({ paused: false, defaults: { ease: "power1.inOut" } });
-	// let menuCloseTl = gsap.timeline({ paused: true, defaults: { ease: "power1.inOut" } });
 	let menuOpenTl = gsap.timeline({ paused: true });
 	let menuCloseTl = gsap.timeline({ paused: true });
 
 	// Define the menu open animation
 	menuOpenTl
-		// .to(menuContainer, { display: "block" }, 0)
-		// .to(menuContainer, { height: `calc(100vh - 56px)` }, 0)
-		// .to(".menu-link", { display: "block" }, 0.3)
-		// .to(".menu-link", { opacity: 1 }, 0.3);
-		.to(".menu-links", {top:56})
+		.to(".menu-links", { top: 56 });
 
 	// Define the menu close animation
 	menuCloseTl
-		// .to(".menu-link", { opacity: 0 }, 0)
-		// .to(menuContainer, { display: "none" }, 0)
-		// .to(".menu-link", { display: "none" }, 0)
-		// .to(menuContainer, { height: "0" }, 1);
-		.to(".menu-links", {top:"-100vh"})
+		.to(".menu-links", { top: "-100vh" });
 
 	hamburger.addEventListener("click", () => {
 		if (!menuOpen) {
@@ -186,4 +253,13 @@ import { SITE_TITLE } from "../consts";
 			menuOpen = false;
 		}
 	});
+
+	const empresasMenu = document.querySelector("#menu-link-empresas")
+
+	empresasMenu.addEventListener("click", () => {
+		const empresasList = document.querySelector(".empresas-list")
+		empresasList.classList.toggle("active")
+		
+	
+	})
 </script>
