@@ -6,6 +6,8 @@ import { SITE_TITLE } from "../consts";
 <style>
 	nav {
 		position: relative;
+		background-color: #f3f3f3;
+
 	}
 	.header {
 		display: flex;
@@ -13,23 +15,13 @@ import { SITE_TITLE } from "../consts";
 		align-items: center;
 
 		padding: 0.75rem 1rem;
+
+		position: relative;
+		z-index: 100;
+
+		background-color: #F3F3F3;
 	}
 
-	.internal-links {
-		width: 100%;
-
-		position: absolute;
-
-		height: 0;
-
-		background-color: #ffffff;
-		transition: height 0.3s ease-in-out;
-	}
-
-	.internal-links .menu-link {
-		display: none;
-		opacity: 0;
-	}
 	.hamburger {
 		display: flex;
 		flex-direction: column;
@@ -45,6 +37,28 @@ import { SITE_TITLE } from "../consts";
 		border-radius: 6px;
 		width: 22px;
 	}
+
+	.menu-links {
+		/* display: none; */
+		width: 100%;
+		height: calc(100vh - 56px);
+		position: absolute;
+
+		top: -100vh;
+
+
+		padding: 2rem 1rem;
+
+		background-color: #ffffff;
+
+		display: flex;
+		flex-direction: column;
+	}
+
+	.menu-link {
+		
+	}
+
 </style>
 
 <header>
@@ -121,7 +135,7 @@ import { SITE_TITLE } from "../consts";
 				<div></div>
 			</div>
 		</div>
-		<div class="internal-links">
+		<div class="menu-links">
 			<!-- <HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink> -->
@@ -131,30 +145,37 @@ import { SITE_TITLE } from "../consts";
 			<a class="menu-link" href="/about">About</a>
 		</div>
 	</nav>
+	
 </header>
 
 <script>
 	import { gsap } from "gsap";
 	const hamburger = document.querySelector(".hamburger");
-	const menuContainer = document.querySelector(".internal-links");
+	const menuContainer = document.querySelector(".menu-links");
 
 	let menuOpen = false;
 
 	// Initialize the timelines without animation
-	let menuOpenTl = gsap.timeline({ paused: true, defaults: { ease: "power1.inOut" } });
-	let menuCloseTl = gsap.timeline({ paused: true, defaults: { ease: "power1.inOut" } });
+	// let menuOpenTl = gsap.timeline({ paused: false, defaults: { ease: "power1.inOut" } });
+	// let menuCloseTl = gsap.timeline({ paused: true, defaults: { ease: "power1.inOut" } });
+	let menuOpenTl = gsap.timeline({ paused: true });
+	let menuCloseTl = gsap.timeline({ paused: true });
 
 	// Define the menu open animation
 	menuOpenTl
-		.to(menuContainer, { height: `calc(100vh - 56px)` }, 0)
-		.to(".menu-link", { display: "block" }, 0.1)
-		.to(".menu-link", { opacity: 1 }, 0.5);
+		// .to(menuContainer, { display: "block" }, 0)
+		// .to(menuContainer, { height: `calc(100vh - 56px)` }, 0)
+		// .to(".menu-link", { display: "block" }, 0.3)
+		// .to(".menu-link", { opacity: 1 }, 0.3);
+		.to(".menu-links", {top:56})
 
 	// Define the menu close animation
 	menuCloseTl
-		.to(".menu-link", { opacity: 0 }, 0)
-		.to(".menu-link", { display: "none" }, 0.1)
-		.to(menuContainer, { height: "0" }, 0.2);
+		// .to(".menu-link", { opacity: 0 }, 0)
+		// .to(menuContainer, { display: "none" }, 0)
+		// .to(".menu-link", { display: "none" }, 0)
+		// .to(menuContainer, { height: "0" }, 1);
+		.to(".menu-links", {top:"-100vh"})
 
 	hamburger.addEventListener("click", () => {
 		if (!menuOpen) {
@@ -166,4 +187,3 @@ import { SITE_TITLE } from "../consts";
 		}
 	});
 </script>
-
