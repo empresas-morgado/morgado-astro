@@ -7,6 +7,7 @@ import { SITE_TITLE } from "../consts";
 	nav {
 		position: relative;
 		background-color: #f3f3f3;
+		border-bottom: 1px solid #CCCCCC;
 	}
 	.header {
 		display: flex;
@@ -19,6 +20,11 @@ import { SITE_TITLE } from "../consts";
 		z-index: 100;
 
 		background-color: #f3f3f3;
+
+		max-width: 1216px;
+		margin: 0 auto;
+
+
 	}
 
 	.hamburger {
@@ -38,9 +44,8 @@ import { SITE_TITLE } from "../consts";
 	}
 
 	.menu-links {
-		/* display: none; */
 		width: 100%;
-		height: calc(100vh - 56px);
+		height: 100vh;
 		position: absolute;
 
 		top: -100vh;
@@ -54,174 +59,425 @@ import { SITE_TITLE } from "../consts";
 	}
 
 	.menu-link {
-		color: #505050;
+		color: #333333;
 		text-decoration: none;
-		border-bottom: 1px solid #CCCCCC;
+		border-bottom: 1px solid #cccccc;
 
 		padding: 0.5rem;
+		padding-left: 0;
 
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-weight: 500;
+	}
+
+	.no-link {
+		border-bottom: none;
+		padding-bottom: 0;
+	}
+
+	.sublist-list {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 1.5rem;
+	}
+
+	.sublist-list a {
+		text-decoration: none;
+		color: #505050;
+		padding: 0.5rem;
+
+		border-bottom: 1px solid #cccccc;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 	}
 
-	.empresas-list{
-		display: flex;
-		flex-direction: column;
-	}
-
-	.empresas-list a{
+	.contacto {
+		margin-top: 2rem;
+		background-color: #222973;
+		color: #ffffff;
 		text-decoration: none;
-		color: #505050;
-		padding: 0.5rem;
-
-		border-bottom: 1px solid #CCCCCC;
+		text-align: center;
+		padding: 0.75rem 1rem;
+		font-size: 0.875rem;
+		border-radius: 22px;
+		line-height: 1;
 	}
 
-	.active{
-		visibility: visible;
-		height: auto;
+	button{
+		background-color: transparent;
+		border: none;
 	}
+
+	@media only screen and (min-width: 900px){
+		nav{
+			padding: 0 2rem;
+		}
+		.nav-container{
+			display: flex;
+			max-width: 1216px;
+			margin: 0 auto;
+			align-items: center;
+
+		}
+		.header{
+			padding: 1rem 0;
+		}
+
+		.logo{
+			flex: 0 0 auto;
+		}
+
+		.hamburger{
+			display: none;
+		}
+
+		.menu-links{
+			flex: 1;
+			position: static;
+			width: auto;
+			height: 100%;
+
+			flex-direction: row;
+
+			background-color: transparent;
+
+			padding: 0;
+
+			justify-content: end;
+
+			gap: 1rem;
+
+		}
+
+		.menu-link{
+			border-bottom: none;
+			padding: 0;
+			padding: 0.5rem 1rem;
+
+			transition: all 0.4s;
+
+			border-bottom: 1px solid transparent;
+		}
+
+		.menu-link:focus{
+			background-color: #fff;
+			border-bottom: 1px solid #CCCCCC;
+		}
+
+		.menu-link svg{
+			display: none;
+		}
+
+		.sublist-list{
+			display: none;
+		}
+
+		.contacto{
+			margin-top: 0;
+			align-self: center;
+		}
+
+		.empresas-block{
+			position: relative;
+		}
+
+		.inmuebles-block{
+			position: relative;
+		}
+
+		.empresas-block .empresas{
+			display: flex;
+			position: absolute;
+
+			pointer-events: none;
+
+			padding: 1rem 1rem 4rem 1rem;
+
+			background-color: #fff;
+
+			left: -150%;
+			right: 0;
+
+
+			transform: translateY(-10px);
+
+			
+			opacity: 0;
+			
+			
+			transition: all .2s ease-in-out;
+
+		}
+
+		.inmuebles-block .inmuebles{
+			display: flex;
+			position: absolute;
+
+			pointer-events: none;
+
+			padding: 1rem 1rem 4rem 1rem;
+
+			background-color: #fff;
+
+			left: -250%;
+			right: 0;
+
+			transform: translateY(-10px);
+
+			
+			opacity: 0;
+			
+			
+			transition: all .2s ease-in-out;
+
+		}
+
+		.empresas-block > .no-link:focus + .empresas{
+			opacity: 1;
+			pointer-events: auto;
+
+
+			transform: translateY(0px);
+		}
+		.inmuebles-block > .no-link:focus + .inmuebles{
+			opacity: 1;
+			pointer-events: auto;
+
+
+			transform: translateY(0px);
+		}
+
+		.menu-link.no-link{
+			gap: 4px;
+		}
+
+		.menu-link.no-link svg{
+			display: block;
+		}
+
+		.sublist-list a{
+			transition: all 0.3s ease-in-out;
+			background-color: transparent;
+		}
+
+		.sublist-list a:hover{
+			background-color: #f3f3f3;
+		}
+
+    }
 </style>
 
 <header>
 	<nav>
-		<div class="header">
-			<a href="/" class="logo"
-				><svg
-					width="114"
-					height="32"
-					viewBox="0 0 114 32"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<rect y="5.33325" width="24" height="21.3333" fill="#AD253A"
-					></rect>
-					<rect
-						x="26"
-						y="5.33325"
-						width="88"
-						height="21.3333"
-						fill="#3351B6"></rect>
-					<path
-						d="M2 9.33325C2 8.22868 2.89543 7.33325 4 7.33325H6V24.6666H4C2.89543 24.6666 2 23.7712 2 22.6666V9.33325Z"
-						fill="white"></path>
-					<path
-						d="M28 9.33325C28 8.22868 28.8954 7.33325 30 7.33325H32V24.6666H30C28.8954 24.6666 28 23.7712 28 22.6666V9.33325Z"
-						fill="white"></path>
-					<path
-						d="M68 7.33325C69.1046 7.33325 70 8.22868 70 9.33325L70 11.3333L50 11.3333L50 7.33325L68 7.33325Z"
-						fill="white"></path>
-					<path
-						d="M22 7.33325L22 11.3333L2 11.3333L2 9.33325C2 8.22868 2.89543 7.33325 4 7.33325L22 7.33325Z"
-						fill="white"></path>
-					<path
-						d="M48 7.33325L48 11.3333L28 11.3333L28 9.33325C28 8.22868 28.8954 7.33325 30 7.33325L48 7.33325Z"
-						fill="white"></path>
-					<path
-						d="M70 24.6667L66 24.6667L66 7.33341L68 7.33341C69.1046 7.33341 70 8.22884 70 9.33341L70 24.6667Z"
-						fill="white"></path>
-					<path d="M48 14L48 18L28 18L28 14L48 14Z" fill="white"
-					></path>
-					<path
-						d="M62 24.6667L58 24.6667L58 7.33341L62 7.33341L62 24.6667Z"
-						fill="white"></path>
-					<path
-						d="M22 20.6667L22 24.6667L4 24.6667C2.89543 24.6667 2 23.7713 2 22.6667L2 20.6667L22 20.6667Z"
-						fill="white"></path>
-					<path
-						d="M48 20.6667L48 24.6667L30 24.6667C28.8954 24.6667 28 23.7713 28 22.6667L28 20.6667L48 20.6667Z"
-						fill="white"></path>
-					<path
-						d="M54 24.6667L50 24.6667L50 7.33341L54 7.33341L54 24.6667Z"
-						fill="white"></path>
-					<circle cx="90" cy="16" r="16" fill="white"></circle>
-					<circle cx="89.9997" cy="15.9999" r="14.6667" fill="white"
-					></circle>
-					<circle
-						cx="89.9997"
-						cy="15.9999"
-						r="14.1667"
-						fill="white"
-						stroke="black"></circle>
-					<path
-						fill-rule="evenodd"
-						clip-rule="evenodd"
-						d="M100.037 26.6942L90.1647 17.204H79.8282C79.7722 17.2077 79.1998 17.2514 78.9577 17.4842C78.703 17.7292 78.666 18.3257 78.666 18.3257V17.204V17.2037V13.9718C78.666 12.0388 80.233 10.4718 82.166 10.4718H84.2894L84.2896 10.4716H86.2549C86.2548 10.7246 86.2993 10.9761 86.3867 11.2155C86.4904 11.4991 86.6522 11.7598 86.8627 11.9822C87.0731 12.2045 87.3279 12.384 87.6119 12.5098C87.8959 12.6357 88.2034 12.7054 88.5159 12.7149C88.8285 12.7243 89.1398 12.6733 89.4315 12.5648C89.7232 12.4563 89.9892 12.2926 90.2138 12.0834C90.4383 11.8742 90.6169 11.6238 90.7388 11.3469C90.8608 11.0701 90.9236 10.7725 90.9236 10.4719H89.7564C89.7564 10.6222 89.725 10.771 89.664 10.9094C89.6031 11.0478 89.5138 11.1731 89.4015 11.2777C89.2892 11.3823 89.1562 11.4641 89.0104 11.5184C88.8645 11.5726 88.7089 11.5981 88.5526 11.5934C88.3963 11.5887 88.2426 11.5538 88.1006 11.4909C87.9586 11.4279 87.8312 11.3382 87.726 11.227C87.6207 11.1159 87.5398 10.9855 87.488 10.8437C87.4443 10.724 87.422 10.5982 87.4221 10.4716H90.922V9.34961H85.5094L87.3392 7.6665H99.9677L96.1737 11.1563V11.4862L104.295 19.2934C103.633 22.1774 102.121 24.737 100.037 26.6942Z"
-						fill="black"></path>
-				</svg>
-			</a>
+		<div class="nav-container">
+			<div class="header">
+				<a href="/" class="logo"
+					><svg
+						width="114"
+						height="32"
+						viewBox="0 0 114 32"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<rect y="5.33325" width="24" height="21.3333" fill="#AD253A"
+						></rect>
+						<rect
+							x="26"
+							y="5.33325"
+							width="88"
+							height="21.3333"
+							fill="#3351B6"></rect>
+						<path
+							d="M2 9.33325C2 8.22868 2.89543 7.33325 4 7.33325H6V24.6666H4C2.89543 24.6666 2 23.7712 2 22.6666V9.33325Z"
+							fill="white"></path>
+						<path
+							d="M28 9.33325C28 8.22868 28.8954 7.33325 30 7.33325H32V24.6666H30C28.8954 24.6666 28 23.7712 28 22.6666V9.33325Z"
+							fill="white"></path>
+						<path
+							d="M68 7.33325C69.1046 7.33325 70 8.22868 70 9.33325L70 11.3333L50 11.3333L50 7.33325L68 7.33325Z"
+							fill="white"></path>
+						<path
+							d="M22 7.33325L22 11.3333L2 11.3333L2 9.33325C2 8.22868 2.89543 7.33325 4 7.33325L22 7.33325Z"
+							fill="white"></path>
+						<path
+							d="M48 7.33325L48 11.3333L28 11.3333L28 9.33325C28 8.22868 28.8954 7.33325 30 7.33325L48 7.33325Z"
+							fill="white"></path>
+						<path
+							d="M70 24.6667L66 24.6667L66 7.33341L68 7.33341C69.1046 7.33341 70 8.22884 70 9.33341L70 24.6667Z"
+							fill="white"></path>
+						<path d="M48 14L48 18L28 18L28 14L48 14Z" fill="white"
+						></path>
+						<path
+							d="M62 24.6667L58 24.6667L58 7.33341L62 7.33341L62 24.6667Z"
+							fill="white"></path>
+						<path
+							d="M22 20.6667L22 24.6667L4 24.6667C2.89543 24.6667 2 23.7713 2 22.6667L2 20.6667L22 20.6667Z"
+							fill="white"></path>
+						<path
+							d="M48 20.6667L48 24.6667L30 24.6667C28.8954 24.6667 28 23.7713 28 22.6667L28 20.6667L48 20.6667Z"
+							fill="white"></path>
+						<path
+							d="M54 24.6667L50 24.6667L50 7.33341L54 7.33341L54 24.6667Z"
+							fill="white"></path>
+						<circle cx="90" cy="16" r="16" fill="white"></circle>
+						<circle cx="89.9997" cy="15.9999" r="14.6667" fill="white"
+						></circle>
+						<circle
+							cx="89.9997"
+							cy="15.9999"
+							r="14.1667"
+							fill="white"
+							stroke="black"></circle>
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M100.037 26.6942L90.1647 17.204H79.8282C79.7722 17.2077 79.1998 17.2514 78.9577 17.4842C78.703 17.7292 78.666 18.3257 78.666 18.3257V17.204V17.2037V13.9718C78.666 12.0388 80.233 10.4718 82.166 10.4718H84.2894L84.2896 10.4716H86.2549C86.2548 10.7246 86.2993 10.9761 86.3867 11.2155C86.4904 11.4991 86.6522 11.7598 86.8627 11.9822C87.0731 12.2045 87.3279 12.384 87.6119 12.5098C87.8959 12.6357 88.2034 12.7054 88.5159 12.7149C88.8285 12.7243 89.1398 12.6733 89.4315 12.5648C89.7232 12.4563 89.9892 12.2926 90.2138 12.0834C90.4383 11.8742 90.6169 11.6238 90.7388 11.3469C90.8608 11.0701 90.9236 10.7725 90.9236 10.4719H89.7564C89.7564 10.6222 89.725 10.771 89.664 10.9094C89.6031 11.0478 89.5138 11.1731 89.4015 11.2777C89.2892 11.3823 89.1562 11.4641 89.0104 11.5184C88.8645 11.5726 88.7089 11.5981 88.5526 11.5934C88.3963 11.5887 88.2426 11.5538 88.1006 11.4909C87.9586 11.4279 87.8312 11.3382 87.726 11.227C87.6207 11.1159 87.5398 10.9855 87.488 10.8437C87.4443 10.724 87.422 10.5982 87.4221 10.4716H90.922V9.34961H85.5094L87.3392 7.6665H99.9677L96.1737 11.1563V11.4862L104.295 19.2934C103.633 22.1774 102.121 24.737 100.037 26.6942Z"
+							fill="black"></path>
+					</svg>
+				</a>
+	
+				<div class="hamburger">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div class="menu-links">
+				<a class="menu-link" href="/">
+					Nosotros
+					<svg
+						width="16"
+						height="16"
+						viewBox="0 0 16 16"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M8.75559 13.091L7.88059 12.2274L11.4829 8.62509H2.15332V7.37509H11.4829L7.88059 3.78418L8.75559 2.90918L13.8465 8.00009L8.75559 13.091Z"
+							fill="#505050"></path>
+					</svg>
+				</a>
+				<div class="empresas-block">
+					<button id="menu-link-empresas" class="menu-link no-link">Empresas<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M13 6L8 11L3 6" stroke="#505050" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg></button>
+					<div class="sublist-list empresas">
+						<a href="/empresas/cantera-la-danta"
+							>Cantera La Danta
+							<svg
+								width="16"
+								height="16"
+								viewBox="0 0 16 16"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M8.75559 13.091L7.88059 12.2274L11.4829 8.62509H2.15332V7.37509H11.4829L7.88059 3.78418L8.75559 2.90918L13.8465 8.00009L8.75559 13.091Z"
+									fill="#505050"></path>
+							</svg>
+						</a>
+						<a href="/empresas/somix"
+							>Somix
+							<svg
+								width="16"
+								height="16"
+								viewBox="0 0 16 16"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M8.75559 13.091L7.88059 12.2274L11.4829 8.62509H2.15332V7.37509H11.4829L7.88059 3.78418L8.75559 2.90918L13.8465 8.00009L8.75559 13.091Z"
+									fill="#505050"></path>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="inmuebles-block">
+					<button class="menu-link no-link">Inmueble<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M13 6L8 11L3 6" stroke="#505050" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg></button>
+					<div class="sublist-list inmuebles">
+						<a href="/inmueble/torre-corporación-empresas-morgado"
+							>Torre Corporación Empresas Morgado
+							<svg
+								width="16"
+								height="16"
+								viewBox="0 0 16 16"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M8.75559 13.091L7.88059 12.2274L11.4829 8.62509H2.15332V7.37509H11.4829L7.88059 3.78418L8.75559 2.90918L13.8465 8.00009L8.75559 13.091Z"
+									fill="#505050"></path>
+							</svg>
+						</a>
+						<a href="/inmueble/centro-empresarial-guayana"
+							>Centro Empresarial Guayana
+							<svg
+								width="16"
+								height="16"
+								viewBox="0 0 16 16"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M8.75559 13.091L7.88059 12.2274L11.4829 8.62509H2.15332V7.37509H11.4829L7.88059 3.78418L8.75559 2.90918L13.8465 8.00009L8.75559 13.091Z"
+									fill="#505050"></path>
+							</svg>
+						</a>
+						<a href="/inmueble/centro-comercial-chilemex"
+							>Centro Comercial Chilemex
+							<svg
+								width="16"
+								height="16"
+								viewBox="0 0 16 16"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M8.75559 13.091L7.88059 12.2274L11.4829 8.62509H2.15332V7.37509H11.4829L7.88059 3.78418L8.75559 2.90918L13.8465 8.00009L8.75559 13.091Z"
+									fill="#505050"></path>
+							</svg>
+						</a>
+						<a href="/inmueble/centro-comercial-caura"
+							>Centro Comercial Caura
+							<svg
+								width="16"
+								height="16"
+								viewBox="0 0 16 16"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M8.75559 13.091L7.88059 12.2274L11.4829 8.62509H2.15332V7.37509H11.4829L7.88059 3.78418L8.75559 2.90918L13.8465 8.00009L8.75559 13.091Z"
+									fill="#505050"></path>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<a class="menu-link" href="/noticias">
+					Noticias
+					<svg
+						width="16"
+						height="16"
+						viewBox="0 0 16 16"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M8.75559 13.091L7.88059 12.2274L11.4829 8.62509H2.15332V7.37509H11.4829L7.88059 3.78418L8.75559 2.90918L13.8465 8.00009L8.75559 13.091Z"
+							fill="#505050"></path>
+					</svg>
+				</a>
+	
+				<a class="contacto" href="#">Contacto</a>
+			</div>
 
-			<div class="hamburger">
-				<div></div>
-				<div></div>
-				<div></div>
-			</div>
 		</div>
-		<div class="menu-links">
-			<a class="menu-link" href="/">
-				Nosotros
-				<svg
-					width="16"
-					height="16"
-					viewBox="0 0 16 16"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M8.75559 13.091L7.88059 12.2274L11.4829 8.62509H2.15332V7.37509H11.4829L7.88059 3.78418L8.75559 2.90918L13.8465 8.00009L8.75559 13.091Z"
-						fill="#505050"></path>
-				</svg>
-			</a>
-			<p id="menu-link-empresas" class="menu-link active">
-				Empresas <svg
-					width="16"
-					height="16"
-					viewBox="0 0 16 16"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M13 6L8 11L3 6"
-						stroke="#505050"
-						stroke-linecap="round"
-						stroke-linejoin="round"></path>
-				</svg>
-			</p>
-			<div class="empresas-list">
-				<a href="/empresas/cantera-la-danta">Cantera La Danta</a>
-				<a href="/empresas/somix">Somix</a>
-			</div>
-			<a class="menu-link" href="/about"
-				>Inmuebles <svg
-					width="16"
-					height="16"
-					viewBox="0 0 16 16"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M13 6L8 11L3 6"
-						stroke="#505050"
-						stroke-linecap="round"
-						stroke-linejoin="round"></path>
-				</svg></a
-			>
-			<a class="menu-link" href="/noticias">
-				Noticias
-				<svg
-					width="16"
-					height="16"
-					viewBox="0 0 16 16"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M8.75559 13.091L7.88059 12.2274L11.4829 8.62509H2.15332V7.37509H11.4829L7.88059 3.78418L8.75559 2.90918L13.8465 8.00009L8.75559 13.091Z"
-						fill="#505050"></path>
-				</svg>
-			</a>
-		</div>
+		
 	</nav>
 </header>
 
@@ -237,12 +493,10 @@ import { SITE_TITLE } from "../consts";
 	let menuCloseTl = gsap.timeline({ paused: true });
 
 	// Define the menu open animation
-	menuOpenTl
-		.to(".menu-links", { top: 56 });
+	menuOpenTl.to(".menu-links", { top: 56 });
 
 	// Define the menu close animation
-	menuCloseTl
-		.to(".menu-links", { top: "-100vh" });
+	menuCloseTl.to(".menu-links", { top: "-100vh" });
 
 	hamburger.addEventListener("click", () => {
 		if (!menuOpen) {
@@ -253,13 +507,4 @@ import { SITE_TITLE } from "../consts";
 			menuOpen = false;
 		}
 	});
-
-	const empresasMenu = document.querySelector("#menu-link-empresas")
-
-	empresasMenu.addEventListener("click", () => {
-		const empresasList = document.querySelector(".empresas-list")
-		empresasList.classList.toggle("active")
-		
-	
-	})
 </script>
