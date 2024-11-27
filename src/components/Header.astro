@@ -7,7 +7,7 @@ import { SITE_TITLE } from "../consts";
 	nav {
 		position: relative;
 		background-color: #f3f3f3;
-		border-bottom: 1px solid #CCCCCC;
+		border-bottom: 1px solid #cccccc;
 	}
 	.header {
 		display: flex;
@@ -23,8 +23,6 @@ import { SITE_TITLE } from "../consts";
 
 		max-width: 1216px;
 		margin: 0 auto;
-
-
 	}
 
 	.hamburger {
@@ -106,35 +104,34 @@ import { SITE_TITLE } from "../consts";
 		line-height: 1;
 	}
 
-	button{
+	button {
 		background-color: transparent;
 		border: none;
 	}
 
-	@media only screen and (min-width: 900px){
-		nav{
+	@media only screen and (min-width: 900px) {
+		nav {
 			padding: 0 2rem;
 		}
-		.nav-container{
+		.nav-container {
 			display: flex;
 			max-width: 1216px;
 			margin: 0 auto;
 			align-items: center;
-
 		}
-		.header{
+		.header {
 			padding: 1rem 0;
 		}
 
-		.logo{
+		.logo {
 			flex: 0 0 auto;
 		}
 
-		.hamburger{
+		.hamburger {
 			display: none;
 		}
 
-		.menu-links{
+		.menu-links {
 			flex: 1;
 			position: static;
 			width: auto;
@@ -149,10 +146,9 @@ import { SITE_TITLE } from "../consts";
 			justify-content: end;
 
 			gap: 1rem;
-
 		}
 
-		.menu-link{
+		.menu-link {
 			border-bottom: none;
 			padding: 0;
 			padding: 0.5rem 1rem;
@@ -162,57 +158,35 @@ import { SITE_TITLE } from "../consts";
 			border-bottom: 1px solid transparent;
 		}
 
-		.menu-link:focus{
+		.menu-link:hover,
+		.menu-link:focus {
 			background-color: #fff;
-			border-bottom: 1px solid #CCCCCC;
+			border-bottom: 1px solid #cccccc;
 		}
 
-		.menu-link svg{
+		.menu-link svg {
 			display: none;
 		}
 
-		.sublist-list{
+		.sublist-list {
 			display: none;
 		}
 
-		.contacto{
+		.contacto {
 			margin-top: 0;
 			align-self: center;
 		}
 
-		.empresas-block{
+		.empresas-block {
 			position: relative;
 		}
 
-		.inmuebles-block{
+		.inmuebles-block {
 			position: relative;
 		}
 
-		.empresas-block .empresas{
-			display: flex;
-			position: absolute;
-
-			pointer-events: none;
-
-			padding: 1rem 1rem 4rem 1rem;
-
-			background-color: #fff;
-
-			left: -150%;
-			right: 0;
-
-
-			transform: translateY(-10px);
-
-			
-			opacity: 0;
-			
-			
-			transition: all .2s ease-in-out;
-
-		}
-
-		.inmuebles-block .inmuebles{
+		.empresas-block .empresas,
+		.inmuebles-block .inmuebles {
 			display: flex;
 			position: absolute;
 
@@ -227,47 +201,45 @@ import { SITE_TITLE } from "../consts";
 
 			transform: translateY(-10px);
 
-			
 			opacity: 0;
-			
-			
-			transition: all .2s ease-in-out;
 
+			transition: all 0.2s ease-in-out;
 		}
 
-		.empresas-block > .no-link:focus + .empresas{
-			opacity: 1;
-			pointer-events: auto;
-
-
-			transform: translateY(0px);
-		}
-		.inmuebles-block > .no-link:focus + .inmuebles{
-			opacity: 1;
-			pointer-events: auto;
-
-
-			transform: translateY(0px);
+		/* Show dropdown when the parent button is focused */
+		.menu-link.no-link:focus + .sublist-list,
+		.menu-link.no-link:focus-within + .sublist-list,
+		.menu-link.no-link:focus-visible + .sublist-list {
+			pointer-events: auto; /* Enable interaction */
+			opacity: 1; /* Make visible */
+			transform: translateY(0); /* Reset offset */
 		}
 
-		.menu-link.no-link{
+		/* Optional: Keep dropdown open if a child is focused */
+		.empresas-block:focus-within .sublist-list,
+		.inmuebles-block:focus-within .sublist-list {
+			pointer-events: auto; /* Enable interaction */
+			opacity: 1; /* Make visible */
+			transform: translateY(0); /* Reset offset */
+		}
+
+		.menu-link.no-link {
 			gap: 4px;
 		}
 
-		.menu-link.no-link svg{
+		.menu-link.no-link svg {
 			display: block;
 		}
 
-		.sublist-list a{
+		.sublist-list a {
 			transition: all 0.3s ease-in-out;
 			background-color: transparent;
 		}
 
-		.sublist-list a:hover{
+		.sublist-list a:hover {
 			background-color: #f3f3f3;
 		}
-
-    }
+	}
 </style>
 
 <header>
@@ -282,8 +254,11 @@ import { SITE_TITLE } from "../consts";
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"
 					>
-						<rect y="5.33325" width="24" height="21.3333" fill="#AD253A"
-						></rect>
+						<rect
+							y="5.33325"
+							width="24"
+							height="21.3333"
+							fill="#AD253A"></rect>
 						<rect
 							x="26"
 							y="5.33325"
@@ -323,8 +298,11 @@ import { SITE_TITLE } from "../consts";
 							d="M54 24.6667L50 24.6667L50 7.33341L54 7.33341L54 24.6667Z"
 							fill="white"></path>
 						<circle cx="90" cy="16" r="16" fill="white"></circle>
-						<circle cx="89.9997" cy="15.9999" r="14.6667" fill="white"
-						></circle>
+						<circle
+							cx="89.9997"
+							cy="15.9999"
+							r="14.6667"
+							fill="white"></circle>
 						<circle
 							cx="89.9997"
 							cy="15.9999"
@@ -338,7 +316,7 @@ import { SITE_TITLE } from "../consts";
 							fill="black"></path>
 					</svg>
 				</a>
-	
+
 				<div class="hamburger">
 					<div></div>
 					<div></div>
@@ -361,9 +339,21 @@ import { SITE_TITLE } from "../consts";
 					</svg>
 				</a>
 				<div class="empresas-block">
-					<button id="menu-link-empresas" class="menu-link no-link">Empresas<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M13 6L8 11L3 6" stroke="#505050" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg></button>
+					<button id="menu-link-empresas" class="menu-link no-link"
+						>Empresas<svg
+							width="16"
+							height="16"
+							viewBox="0 0 16 16"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M13 6L8 11L3 6"
+								stroke="#505050"
+								stroke-linecap="round"
+								stroke-linejoin="round"></path>
+						</svg></button
+					>
 					<div class="sublist-list empresas">
 						<a href="/empresas/cantera-la-danta"
 							>Cantera La Danta
@@ -396,9 +386,21 @@ import { SITE_TITLE } from "../consts";
 					</div>
 				</div>
 				<div class="inmuebles-block">
-					<button class="menu-link no-link">Inmueble<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M13 6L8 11L3 6" stroke="#505050" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg></button>
+					<button class="menu-link no-link"
+						>Inmueble<svg
+							width="16"
+							height="16"
+							viewBox="0 0 16 16"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M13 6L8 11L3 6"
+								stroke="#505050"
+								stroke-linecap="round"
+								stroke-linejoin="round"></path>
+						</svg></button
+					>
 					<div class="sublist-list inmuebles">
 						<a href="/inmueble/torre-corporación-empresas-morgado"
 							>Torre Corporación Empresas Morgado
@@ -472,12 +474,10 @@ import { SITE_TITLE } from "../consts";
 							fill="#505050"></path>
 					</svg>
 				</a>
-	
+
 				<a class="contacto" href="#">Contacto</a>
 			</div>
-
 		</div>
-		
 	</nav>
 </header>
 
