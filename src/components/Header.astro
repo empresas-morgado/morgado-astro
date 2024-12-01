@@ -75,6 +75,10 @@ import { SITE_TITLE } from "../consts";
 		padding-bottom: 0;
 	}
 
+	.no-link svg{
+		display: none;
+	}
+
 	.sublist-list {
 		display: flex;
 		flex-direction: column;
@@ -240,6 +244,10 @@ import { SITE_TITLE } from "../consts";
 		.sublist-list a:hover {
 			background-color: #f3f3f3;
 		}
+
+		.no-link svg{
+		display: block;
+	}
 	}
 </style>
 
@@ -388,7 +396,7 @@ import { SITE_TITLE } from "../consts";
 				</div>
 				<div class="inmuebles-block">
 					<button class="menu-link no-link"
-						>Inmueble<svg
+						>Inmuebles<svg
 							width="16"
 							height="16"
 							viewBox="0 0 16 16"

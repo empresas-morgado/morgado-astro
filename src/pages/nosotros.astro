@@ -18,7 +18,7 @@ import perezMorgado from "../images/nosotros/perez-morgado.jpg";
         padding: 3rem 1rem 4rem 1rem;
     }
 
-    .section-container{
+    .section-container {
         max-width: 1216px;
         margin: 0 auto;
     }
@@ -46,7 +46,7 @@ import perezMorgado from "../images/nosotros/perez-morgado.jpg";
         margin-top: 1rem;
     }
 
-    .blocks-container{
+    .blocks-container {
         display: flex;
         flex-direction: column;
         gap: 3rem;
@@ -67,70 +67,81 @@ import perezMorgado from "../images/nosotros/perez-morgado.jpg";
         margin-bottom: 1rem;
     }
 
-    .end{
+    .end {
         margin-bottom: 0;
     }
 
-    .guide{
+    .guide {
         display: none;
     }
 
-@media only screen and (min-width: 600px){
-
-    section{
-        padding: 3rem 2rem 4rem 2rem;
+    @media only screen and (min-width: 600px) {
+        section {
+            padding: 3rem 2rem 4rem 2rem;
+        }
     }
 
-}
+    @media only screen and (min-width: 900px) {
+        section {
+            padding: 4rem 2rem 4rem 2rem;
+        }
+        .section-container {
+            display: flex;
+            gap: 136px;
+        }
 
+        .intro {
+            margin-bottom: 4rem;
+        }
 
-@media only screen and (min-width: 900px){
+        .blocks-container {
+            gap: 4rem;
+        }
 
-    section{
-        padding: 4rem 2rem 4rem 2rem;
+        .section-container > div {
+            flex: 1;
+        }
+        .guide {
+            display: block;
+            max-width: 488px;
+        }
+
+        .guide > div {
+            position: sticky;
+            top: 32px;
+            padding: 4rem 4rem;
+            background-color: #f3f3f3;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        li {
+            border-bottom: 1px solid #cccccc;
+            padding: 0.5rem;
+            /* Add transition for smooth background color change */
+            transition: background-color 0.3s ease;
+        }
+
+        a {
+            color: #505050;
+            text-decoration: none;
+        }
+
+        .guide ul li.active {
+            background-color: #ffffff; /* Adjust the color as needed */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
     }
-    .section-container{
-        display: flex;
-        gap: 136px;
-    }
-
-    .intro{
-        margin-bottom: 4rem;
-    }
-
-    .blocks-container{
-        gap: 4rem;
-    }
-
-    .section-container > div{
-        flex: 1;
-    }
-    .guide{
-        display: block;
-        max-width: 488px;
-    }
-
-    .guide > div{
-        position: sticky;
-        top: 32px;
-        padding: 4rem 4rem;
-        background-color: #F3F3F3;
-    }
-
-    ul{
-        list-style-type: none;
-        padding: 0;
-
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    li{
-        border-bottom: 1px solid red;
-        padding: 0.5rem;
-    }
-}
 </style>
 
 <html lang="en">
@@ -140,15 +151,14 @@ import perezMorgado from "../images/nosotros/perez-morgado.jpg";
     <body>
         <Header />
         <section>
-
             <div class="section-container">
                 <div class="content">
                     <div class="intro">
                         <h1>Nuestra historia y visión empresarial</h1>
                         <p>
-                            Corporación Empresas Morgado es una travesía de visión y
-                            esfuerzo, que comenzó en los años 50 cuando los hermanos
-                            Morgado llegaron a Venezuela
+                            Corporación Empresas Morgado es una travesía de
+                            visión y esfuerzo, que comenzó en los años 50 cuando
+                            los hermanos Morgado llegaron a Venezuela
                         </p>
                         <Image
                             src={anibalManuelLlovizna}
@@ -158,52 +168,59 @@ import perezMorgado from "../images/nosotros/perez-morgado.jpg";
                             loading="lazy"
                         />
                         <p class="image-text">
-                            Anibal y Manuel Morgado Salto La Llovizna, Ciudad Guyana.
+                            Anibal y Manuel Morgado Salto La Llovizna, Ciudad
+                            Guyana.
                         </p>
                     </div>
-        
+
                     <div class="blocks-container">
-                        <div class="block">
+                        <div class="block" id="inicios-legado">
                             <h2>Los inicios de un legado</h2>
                             <p class="subtitulo">
-                                Primero Manuel, poco tiempo después Aníbal, aún menores de
-                                edad, llegaron a Venezuela en los años 50.
+                                Primero Manuel, poco tiempo después Aníbal, aún
+                                menores de edad, llegaron a Venezuela en los
+                                años 50.
                             </p>
                             <p>
-                                Los hermanos Morgado se establecieron en Ciudad Guayana, en
-                                ese entonces un incipiente caserío en la confluencia de los
-                                ríos Caroní y Orinoco, a partir de los asentamientos de San
-                                Félix, Palúa y Puerto Ordaz, este último, un campamento de
-                                empresas que explotaban los yacimientos de hierro. Sin
-                                puentes en ese momento, el transporte entre Puerto Ordaz y
-                                San Félix se realizaba en chalana, igual que en Ciudad
+                                Los hermanos Morgado se establecieron en Ciudad
+                                Guayana, en ese entonces un incipiente caserío
+                                en la confluencia de los ríos Caroní y Orinoco,
+                                a partir de los asentamientos de San Félix,
+                                Palúa y Puerto Ordaz, este último, un campamento
+                                de empresas que explotaban los yacimientos de
+                                hierro. Sin puentes en ese momento, el
+                                transporte entre Puerto Ordaz y San Félix se
+                                realizaba en chalana, igual que en Ciudad
                                 Bolívar para cruzar el Orinoco.
                             </p>
                         </div>
-            
-                        <div class="block">
+
+                        <div class="block" id="vision-guayana">
                             <h2>La visión de Guayana y Venalum</h2>
                             <p>
-                                Desde la época del descubrimiento y colonización de América,
-                                Guayana despertó un gran interés por sus supuestas riquezas
-                                ocultas, avivando la búsqueda del mítico Dorado. Sin
-                                embargo, fue la explotación de su potencial hidroeléctrico
-                                la que representó su mayor riqueza y cambiaría
+                                Desde la época del descubrimiento y colonización
+                                de América, Guayana despertó un gran interés por
+                                sus supuestas riquezas ocultas, avivando la
+                                búsqueda del mítico Dorado. Sin embargo, fue la
+                                explotación de su potencial hidroeléctrico la
+                                que representó su mayor riqueza y cambiaría
                                 definitivamente su destino.
                             </p>
                             <br />
                             <p>
-                                Los descubrimientos de grandes yacimientos de hierro ya
-                                habían sido aprovechados por la empresa norteamericana US
-                                Steel a través de la Orinoco Mining Company desde 1950. En
-                                1955, se contrató la construcción de infraestructuras con la
-                                firma Innocenti de Milán, Italia. En 1960, se fundó la
-                                Corporación Venezolana de Guayana (CVG) y se le asignaron
-                                funciones de desarrollo, estudio y dirección de proyectos en
-                                la región, bajo la presidencia del Coronel Rafael Alfonzo
+                                Los descubrimientos de grandes yacimientos de
+                                hierro ya habían sido aprovechados por la
+                                empresa norteamericana US Steel a través de la
+                                Orinoco Mining Company desde 1950. En 1955, se
+                                contrató la construcción de infraestructuras con
+                                la firma Innocenti de Milán, Italia. En 1960, se
+                                fundó la Corporación Venezolana de Guayana (CVG)
+                                y se le asignaron funciones de desarrollo,
+                                estudio y dirección de proyectos en la región,
+                                bajo la presidencia del Coronel Rafael Alfonzo
                                 Ravard.
                             </p>
-            
+
                             <div class="image-block">
                                 <Image
                                     src={sucreRomulo}
@@ -213,67 +230,75 @@ import perezMorgado from "../images/nosotros/perez-morgado.jpg";
                                     loading="lazy"
                                 />
                                 <p class="image-text">
-                                    En los años 60, Leopoldo Sucre Figarella, Rómulo
-                                    Betancourt, General Rafael Alfonzo Ravard y Pablo Pérez
-                                    Alfonso se reúnen en el Cañon de Nekuima, conocido como
-                                    Guri, donde se construiría la gran represa
+                                    En los años 60, Leopoldo Sucre Figarella,
+                                    Rómulo Betancourt, General Rafael Alfonzo
+                                    Ravard y Pablo Pérez Alfonso se reúnen en el
+                                    Cañon de Nekuima, conocido como Guri, donde
+                                    se construiría la gran represa
                                     hidroeléctrica Guri.
                                 </p>
                             </div>
-            
+
                             <p>
-                                Los estudios de la cuenca del Caroní mostraron que su
-                                potencial hidroeléctrico no solo podía abastecer al país con
-                                energía eléctrica, sino también sustentar industrias de alto
-                                consumo energético. Esto abrió las puertas para el
-                                desarrollo de la industria del aluminio, concretándose el
-                                primer proyecto en una asociación entre el Estado Venezolano
-                                y Reynolds, con la creación de la fábrica Alcasa.
+                                Los estudios de la cuenca del Caroní mostraron
+                                que su potencial hidroeléctrico no solo podía
+                                abastecer al país con energía eléctrica, sino
+                                también sustentar industrias de alto consumo
+                                energético. Esto abrió las puertas para el
+                                desarrollo de la industria del aluminio,
+                                concretándose el primer proyecto en una
+                                asociación entre el Estado Venezolano y
+                                Reynolds, con la creación de la fábrica Alcasa.
                             </p>
-            
+
                             <br />
                             <p>
-                                A partir de esta experiencia, se constituyó Venalum, en
-                                sociedad con empresarios japoneses, dando pasos definitivos
-                                para consolidar la industria integral del aluminio en
-                                Guayana, desde los yacimientos de bauxita en el municipio
-                                Cedeño del Edo. Bolívar, pasando por la planta de alúmina,
-                                Interalúmina, hasta la planta de coque, encargada de
-                                producir los ánodos para las plantas de aluminio.
+                                A partir de esta experiencia, se constituyó
+                                Venalum, en sociedad con empresarios japoneses,
+                                dando pasos definitivos para consolidar la
+                                industria integral del aluminio en Guayana,
+                                desde los yacimientos de bauxita en el municipio
+                                Cedeño del Edo. Bolívar, pasando por la planta
+                                de alúmina, Interalúmina, hasta la planta de
+                                coque, encargada de producir los ánodos para las
+                                plantas de aluminio.
                             </p>
-            
+
                             <br />
                             <p class="subtitulo">
-                                Todos estos desarrollos requerían de los servicios
-                                indispensables para albergar la población que haría posible
-                                su realización. Así nace Ciudad Guayana.
+                                Todos estos desarrollos requerían de los
+                                servicios indispensables para albergar la
+                                población que haría posible su realización. Así
+                                nace Ciudad Guayana.
                             </p>
                         </div>
-            
-                        <div class="block">
+
+                        <div class="block" id="ciudad-guayana">
                             <h2>Ciudad Guyana, el desarrollo de una urbe</h2>
                             <p>
-                                Todos estos desarrollos trajeron consigo la necesidad de
-                                servicios e infraestructura para albergar a la población que
-                                los haría realidad. Así nació Ciudad Guayana, el primer
-                                desarrollo urbano planificado en el país. De un asentamiento
-                                de menos de 10 mil personas, se transformó en una ciudad
-                                moderna con más de un millón de habitantes. Esta
-                                modernización incluyó autopistas, carreteras, puertos en el
-                                Orinoco, puentes sobre los principales ríos, miles de
+                                Todos estos desarrollos trajeron consigo la
+                                necesidad de servicios e infraestructura para
+                                albergar a la población que los haría realidad.
+                                Así nació Ciudad Guayana, el primer desarrollo
+                                urbano planificado en el país. De un
+                                asentamiento de menos de 10 mil personas, se
+                                transformó en una ciudad moderna con más de un
+                                millón de habitantes. Esta modernización incluyó
+                                autopistas, carreteras, puertos en el Orinoco,
+                                puentes sobre los principales ríos, miles de
                                 kilómetros de líneas de transmisión eléctrica,
-                                subestaciones, avenidas, aeropuertos, viviendas, escuelas,
-                                universidades, hospitales y clínicas.
+                                subestaciones, avenidas, aeropuertos, viviendas,
+                                escuelas, universidades, hospitales y clínicas.
                             </p>
                             <br />
                             <p class="subtitulo end">
-                                El Programa de Guayana representa el desarrollo histórico
-                                más trascendental en Venezuela después de la industria
-                                petrolera.
+                                El Programa de Guayana representa el desarrollo
+                                histórico más trascendental en Venezuela después
+                                de la industria petrolera.
                             </p>
                         </div>
-            
-                        <div class="block">
+
+                        <div class="block" id="simpca">
                             <h2>SIMPCA: nuestra primera empresa</h2>
                             <div class="image-block">
                                 <Image
@@ -284,18 +309,20 @@ import perezMorgado from "../images/nosotros/perez-morgado.jpg";
                                     loading="lazy"
                                 />
                                 <p class="image-text">
-                                    Anibal Morgado (Izq.), como ayudante de Mecánico junto a
-                                    Pascual Spina.
+                                    Anibal Morgado (Izq.), como ayudante de
+                                    Mecánico junto a Pascual Spina.
                                 </p>
                             </div>
                             <p>
-                                Simpca, inicialmente una compañía de reparación y alquiler
-                                de Maquinaria pesada, CA, diversificó su actividad para el
-                                concreto premezclado. Años de consolidación y crecimiento,
-                                donde muchos desafíos y dificultades fueron superadas,
-                                llevaron a tener presencia en todo oriente del país.
+                                Simpca, inicialmente una compañía de reparación
+                                y alquiler de Maquinaria pesada, CA, diversificó
+                                su actividad para el concreto premezclado. Años
+                                de consolidación y crecimiento, donde muchos
+                                desafíos y dificultades fueron superadas,
+                                llevaron a tener presencia en todo oriente del
+                                país.
                             </p>
-            
+
                             <div class="image-block">
                                 <Image
                                     src={anibalCamion}
@@ -306,15 +333,17 @@ import perezMorgado from "../images/nosotros/perez-morgado.jpg";
                                 />
                                 <p class="image-text">Anibal Morgado.</p>
                             </div>
-            
+
                             <p class="subtitulo">
-                                Cuando, en el año 2000, no sin buena dosis de nostalgia por
-                                parte de la familia, el Grupo Simpca que incluía Canteras y
-                                Areneras, fue vendido a la multi nacional mexicana CEMEX,
-                                Simpca era líder de mercado en el Oriente de Venezuela,
-                                siendo la más grande concretera independiente de Venezuela.
+                                Cuando, en el año 2000, no sin buena dosis de
+                                nostalgia por parte de la familia, el Grupo
+                                Simpca que incluía Canteras y Areneras, fue
+                                vendido a la multi nacional mexicana CEMEX,
+                                Simpca era líder de mercado en el Oriente de
+                                Venezuela, siendo la más grande concretera
+                                independiente de Venezuela.
                             </p>
-            
+
                             <div class="image-block end">
                                 <Image
                                     src={simpca}
@@ -323,16 +352,31 @@ import perezMorgado from "../images/nosotros/perez-morgado.jpg";
                                     height={600}
                                     loading="lazy"
                                 />
-                                <p class="image-text">Simpca, planta de concreto</p>
+                                <p class="image-text">
+                                    Simpca, planta de concreto
+                                </p>
                             </div>
                         </div>
-            
-                        <div class="block">
+
+                        <div class="block" id="contribuimos-nacional">
                             <h2>Contribuimos a nivel nacional</h2>
-                            <p>SOMOR participó en importantes obras de infraestructura en toda Venezuela: vialidad, urbanismos residenciales e industriales en exitosas alianzas público-privadas, como la Zona Industrial Los Pinos y Villa Betania. Además, realizaron movimientos de tierras, construyeron plantas industriales como la Planta de Pellas, y contribuyeron a la construcción de represas.</p>
-                            <br>
-                            <p>El grupo también tuvo presencia en sectores diversos de la economía, como el sector petrolero y la industria del aluminio.</p>
-            
+                            <p>
+                                SOMOR participó en importantes obras de
+                                infraestructura en toda Venezuela: vialidad,
+                                urbanismos residenciales e industriales en
+                                exitosas alianzas público-privadas, como la Zona
+                                Industrial Los Pinos y Villa Betania. Además,
+                                realizaron movimientos de tierras, construyeron
+                                plantas industriales como la Planta de Pellas, y
+                                contribuyeron a la construcción de represas.
+                            </p>
+                            <br />
+                            <p>
+                                El grupo también tuvo presencia en sectores
+                                diversos de la economía, como el sector
+                                petrolero y la industria del aluminio.
+                            </p>
+
                             <div class="image-block end">
                                 <Image
                                     src={galpon}
@@ -343,10 +387,21 @@ import perezMorgado from "../images/nosotros/perez-morgado.jpg";
                                 />
                             </div>
                         </div>
-            
-                        <div class="block">
+
+                        <div class="block" id="sueño-atlantico">
                             <h2>Un sueño que cruzó el Atlántico</h2>
-                            <p>Desde Ilhavo, ciudad piscatoria en Portugal, de donde salían los barcos a los mares de Canada a pescar el famoso bacalao, ingrediente obligatorio en la cocina portuguesa, los hermanos Morgado, huérfanos de padre y madre desde muy pequeños, salieron a buscar un futuro mejor en la lejana Venezuela, un país al que adoptaron como suyo y donde pudieron ser pioneros en la construcción de esa maravillosa Guayana.</p>
+                            <p>
+                                Desde Ilhavo, ciudad piscatoria en Portugal, de
+                                donde salían los barcos a los mares de Canada a
+                                pescar el famoso bacalao, ingrediente
+                                obligatorio en la cocina portuguesa, los
+                                hermanos Morgado, huérfanos de padre y madre
+                                desde muy pequeños, salieron a buscar un futuro
+                                mejor en la lejana Venezuela, un país al que
+                                adoptaron como suyo y donde pudieron ser
+                                pioneros en la construcción de esa maravillosa
+                                Guayana.
+                            </p>
                             <div class="image-block end">
                                 <Image
                                     src={perezMorgado}
@@ -355,29 +410,96 @@ import perezMorgado from "../images/nosotros/perez-morgado.jpg";
                                     height={600}
                                     loading="lazy"
                                 />
-                                <p class="image-text">El Presidente Carlos Andrés Perez inaugura las instalaciones industriales de Pianmeca SA, acompañado del ministro Leopoldo Sucre Figarella, el gobernador del Estado Andrés Velásquez y por la empresa Anibal Morgado y Tommaso Annese.</p>
+                                <p class="image-text">
+                                    El Presidente Carlos Andrés Perez inaugura
+                                    las instalaciones industriales de Pianmeca
+                                    SA, acompañado del ministro Leopoldo Sucre
+                                    Figarella, el gobernador del Estado Andrés
+                                    Velásquez y por la empresa Anibal Morgado y
+                                    Tommaso Annese.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="guide">
                     <div>
                         <ul>
-                            <li>Los inicios de un legado</li>
-                            <li>La visión de Guayana y Venalum</li>
-                            <li>Ciudad Guayana, el desarrollo de una urbe</li>
-                            <li>SIMPCA: Nuestra primera empresa</li>
-                            <li>Contribuimos a nivel nacional</li>
-                            <li>Un sueño que cruzó el atlántico</li>
+                            <li>
+                                <a href="#inicios-legado"
+                                    >Los inicios de un legado</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#vision-guayana"
+                                    >La visión de Guayana y Venalum</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#ciudad-guayana"
+                                    >Ciudad Guayana, el desarrollo de una urbe</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#simpca"
+                                    >SIMPCA: Nuestra primera empresa</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#contribuimos-nacional"
+                                    >Contribuimos a nivel nacional</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#sueño-atlantico"
+                                    >Un sueño que cruzó el Atlántico</a
+                                >
+                            </li>
                         </ul>
                     </div>
-
                 </div>
             </div>
-
         </section>
     </body>
 
     <Footer />
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".block");
+            const navLi = document.querySelectorAll(".guide ul li");
+
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.35, // Adjust the threshold as needed
+            };
+
+            const observer = new IntersectionObserver(function (
+                entries,
+                observer,
+            ) {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        // Remove 'active' class from all guide items
+                        navLi.forEach((li) => li.classList.remove("active"));
+
+                        // Get the corresponding guide item
+                        const activeSectionId = entry.target.getAttribute("id");
+                        const activeNavLi = document.querySelector(
+                            `.guide ul li a[href="#${activeSectionId}"]`,
+                        ).parentElement;
+
+                        // Add 'active' class to the current guide item
+                        activeNavLi.classList.add("active");
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach((section) => {
+                observer.observe(section);
+            });
+        });
+    </script>
 </html>

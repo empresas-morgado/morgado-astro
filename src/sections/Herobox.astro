@@ -1,5 +1,19 @@
 ---
+import { Image } from "astro:assets";
 
+import torreCem from "../images/torre-cem.jpg";
+import chilemex from "../images/chilemex.jpg";
+import centroGuayana from "../images/centro-empresarial-guayana.jpg";
+import centroGuayana2 from "../images/centro-empresarial-guayana-2.jpg";
+import image1 from "../images/hero-slider/image1.jpg";
+import image2 from "../images/hero-slider/image2.jpg";
+import image3 from "../images/hero-slider/image3.jpg";
+import image4 from "../images/hero-slider/image4.jpg";
+import image5 from "../images/hero-slider/image5.jpg";
+import image6 from "../images/hero-slider/image6.jpg";
+import image7 from "../images/hero-slider/image7.jpg";
+import image8 from "../images/hero-slider/image8.jpg";
+import image9 from "../images/hero-slider/image9.jpg";
 ---
 
 <style>
@@ -50,14 +64,38 @@
     }
 
     .slider-hero {
-        border: 1px solid red;
-        height: 200px;
+        /* border: 1px solid red; */
         margin-bottom: 1rem;
+        /* height: 300px; */
     }
+
+    .slider-hero-mobile li{
+        /* border: 1px solid red; */
+    }
+
+    .slider-hero-mobile img {
+        height: auto;
+        max-width: 100%;
+    }
+
+
+    .slider-hero{
+        display: none;
+    }
+
 
     @media only screen and (min-width: 600px) {
         section {
             padding: 4rem 2rem;
+        }
+
+        .slider-hero-mobile{
+            display: none;
+        }
+
+        .slider-hero{
+            display: block;
+            max-width: 100%;
         }
 
         .intro {
@@ -93,6 +131,10 @@
         .slider-hero {
             grid-area: slider-hero;
             margin-bottom: 0;
+        }
+
+        .card img{
+            /* padding: 1rem; */
         }
 
         .descubre-mas {
@@ -145,7 +187,118 @@
                 <p>1966</p>
             </div>
             <h1>Corporación Empresas Morgado</h1>
+            <div class="slider-hero-mobile">
+                <div class="splide hero-mobile" aria-label="Splide Basic HTML Example">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide card">
+                                <Image
+                                    src={image1}
+                                    alt="Cantera La Danta"
+                                    width={592}
+                                    height={600}
+                                />
+                            </li>
+                            <li class="splide__slide card">
+                                <Image
+                                    src={image4}
+                                    alt="Cantera La Danta"
+                                    width={592}
+                                    height={600}
+                                />
+                            </li>
+                            <li class="splide__slide card">
+                                <Image
+                                    src={image7}
+                                    alt="Cantera La Danta"
+                                    width={592}
+                                    height={600}
+                                />
+                            </li>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <div class="slider-hero">
+                <div class="splide hero" aria-label="Splide Basic HTML Example">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide card">
+                                <Image
+                                    src={image1}
+                                    alt="Cantera La Danta"
+                                    width={592}
+                                    height={600}
+                                />
+                            </li>
+                            <li class="splide__slide card">
+                                <Image
+                                    src={image2}
+                                    alt="Cantera La Danta"
+                                    width={280}
+                                    height={600}
+                                />
+                            </li>
+                            <li class="splide__slide card">
+                                <Image
+                                    src={image3}
+                                    alt="Cantera La Danta"
+                                    width={280}
+                                    height={600}
+                                />
+                            </li>
+                            <li class="splide__slide card">
+                                <Image
+                                    src={image4}
+                                    alt="Cantera La Danta"
+                                    width={592}
+                                    height={600}
+                                />
+                            </li>
+                            <li class="splide__slide card">
+                                <Image
+                                    src={image5}
+                                    alt="Cantera La Danta"
+                                    width={280}
+                                    height={600}
+                                />
+                            </li>
+                            <li class="splide__slide card">
+                                <Image
+                                    src={image6}
+                                    alt="Cantera La Danta"
+                                    width={280}
+                                    height={600}
+                                />
+                            </li>
+                            <li class="splide__slide card">
+                                <Image
+                                    src={image7}
+                                    alt="Cantera La Danta"
+                                    width={592}
+                                    height={600}
+                                />
+                            </li>
+                            <li class="splide__slide card">
+                                <Image
+                                    src={image8}
+                                    alt="Cantera La Danta"
+                                    width={280}
+                                    height={600}
+                                />
+                            </li>
+                            <li class="splide__slide card">
+                                <Image
+                                    src={image9}
+                                    alt="Cantera La Danta"
+                                    width={280}
+                                    height={600}
+                                />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <p class="intro-text">
                 Desde su llegada a Venezuela en los años 50, la familia Morgado
@@ -189,4 +342,41 @@
     </div>
 </section>
 
-<script></script>
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", function () {
+      var splideHero = new Splide(".splide.hero", {
+        type: "loop",
+        perPage: 3,
+        perMove: 1,
+        arrows: false,
+        pagination: false,
+        gap: "2rem",
+        autoWidth: true,
+        // autoHeight: true, // Enable autoHeight for responsive height
+        breakpoints: {
+          // mediaQuery: 'min',
+          // 900: {
+          //   fixedWidth: "260px",
+          // },
+        },
+      });
+      splideHero.mount();
+
+      var splideHeroMobile = new Splide(".splide.hero-mobile", {
+        type: "loop",
+        perPage: 1,
+        perMove: 1,
+        arrows: false,
+        pagination: false,
+        // autoWidth: true,
+        // autoHeight: true, // Enable autoHeight for responsive height
+        breakpoints: {
+          // mediaQuery: 'min',
+          // 900: {
+          //   fixedWidth: "260px",
+          // },
+        },
+      });
+      splideHeroMobile.mount();
+    });
+  </script>
