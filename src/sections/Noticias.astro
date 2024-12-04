@@ -42,6 +42,10 @@ const posts = (await getCollection("blog")).sort(
 
     .info-noticia {
         padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* height: 100%; */
     }
 
     h4 {
@@ -63,14 +67,67 @@ const posts = (await getCollection("blog")).sort(
         text-align: right;
     }
 
+    li a {
+        text-decoration: none;
+    }
+
+    .title {
+        line-height: 1.5;
+        color: #333;
+        margin-bottom: 1rem;
+    }
+
+    .description {
+        line-height: 1.75;
+        color: #505050;
+        font-size: 0.875rem;
+        margin-bottom: 3rem;
+    }
+
+    .image-container {
+        aspect-ratio: 21/9;
+    }
+
+    li img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    .button {
+        font-size: 1rem;
+        line-height: 1.75;
+        padding: 0.5rem 1rem;
+        border: 1px solid #ccc;
+        color: #505050;
+        border-radius: 22px;
+        align-self: flex-start;
+    }
+
     @media only screen and (min-width: 600px) {
         .numero-1 {
             display: block;
+        }
+        ul {
+            display: flex;
+            gap: 1rem;
+        }
+
+        ul li {
+            flex: 1;
+        }
+
+        .container {
+            padding: 4rem 2rem;
         }
     }
     @media only screen and (min-width: 900px) {
         .numero-2 {
             display: block;
+        }
+
+        ul {
+            gap: 2rem;
         }
     }
 </style>
@@ -87,19 +144,41 @@ const posts = (await getCollection("blog")).sort(
                     posts.slice(0, 3).map((post, index) => (
                         <li class={"noticia numero-" + index.toString()}>
                             <a href={`/blog/${post.slug}/`}>
+                            <div class="image-container">
                                 <img
                                     width={720}
                                     height={360}
                                     src={post.data.heroImage}
                                     alt={post.data.title}
                                 />
+                            </div>
                                 <div class="info-noticia">
-                                    <h4 class="title">{post.data.title}</h4>
-                                    <p class="date">
-                                        <FormattedDate
-                                            date={post.data.pubDate}
-                                        />
+                                    <h4 class="title">
+                                        {post.data.title.split(" ").length > 6
+                                            ? post.data.title
+                                                    .split(" ")
+                                                    .slice(0, 5)
+                                                    .join(" ") +
+                                                  "..."
+                                            : post.data.title}
+                                    </h4>
+                                    <p class="description">
+                                        {post.data.description
+                                            .split(" ")
+                                            .slice(0, 20)
+                                            .join(" ") +
+                                            (post.data.description.split(" ")
+                                                .length > 20
+                                                ? "..."
+                                                : "")}
                                     </p>
+
+                                    <a
+                                        href={`/blog/${post.slug}/`}
+                                        class="button"
+                                    >
+                                        Leer más ->
+                                    </a>
                                 </div>
                             </a>
                         </li>

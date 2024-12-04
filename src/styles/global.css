@@ -125,12 +125,7 @@ body {
 	font-size: 16px;
 	line-height: 1.75;
 }
-main {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
-}
+
 h1,
 h2,
 h3,
@@ -173,9 +168,8 @@ a:hover {
 p {
 	/* margin-bottom: 1em; */
 }
-.prose p {
-	margin-bottom: 2em;
-}
+
+
 textarea {
 	width: 100%;
 	font-size: 16px;
@@ -251,5 +245,68 @@ button {
 	}
 	h2{
 		font-size: 3rem;
+	}
+}
+
+
+/* ARTICLES ARTICLES ARTICLES ARTICLES ARTICLES ARTICLES ARTICLES */
+
+main {
+	max-width: 768px;
+	margin: auto;
+	padding: 3rem 1rem;
+}
+
+.title h1 {
+	margin-bottom: 1rem;
+	font-size: 2rem;
+	line-height: 1.25;
+}
+
+.prose {
+	color: #333;
+}
+
+.prose h2{
+	font-size: 1.5rem;
+
+}
+
+.prose p {
+	color: #505050;
+}
+
+
+.blog-content {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+}
+
+.blog-section{
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+@media only screen and (min-width: 600px){
+	main{
+		padding: 3rem 2rem;
+	}
+}
+@media only screen and (min-width: 900px){
+	main{
+		padding: 4rem 2rem;
+	}
+	.title h1{
+		font-size: 3rem;
+	}
+
+	.prose h2{
+		font-size: 2rem;
+	}
+
+	.blog-content{
+		gap: 4rem;
 	}
 }
