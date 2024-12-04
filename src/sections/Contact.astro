@@ -3,25 +3,171 @@
 ---
 
 <style>
-
-    section{
+    .side {
         padding: 4rem 1rem;
     }
 
-    h1{
+    h1 {
         font-size: 2rem;
         margin-bottom: 1rem;
     }
 
+    .intro {
+        margin-bottom: 2rem;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    form input,
+    form textarea {
+        font-size: 1rem;
+        color: #505050;
+        line-height: 1.75;
+        padding: 0.5rem;
+
+        border: none;
+        border-bottom: 1px solid #cccccc;
+        background-color: #f3f3f3;
+    }
+
+    form input::placeholder,
+    form textarea::placeholder {
+        color: #a2a2a2;
+        font-style: italic;
+    }
+
+    form button {
+        align-self: flex-start;
+        line-height: 1.75;
+        background-color: #222973;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 22px;
+    }
+
+    .banner-container {
+        padding: 4rem 1rem;
+        background-image: url(/images/contact-bg.webp);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .banner-container h2 {
+        color: #fff;
+        margin-bottom: 2rem;
+    }
+
+    .banner-container a {
+        padding: 0.5rem 1rem;
+        color: #fff;
+        background-color: #9d4949;
+        border-radius: 22px;
+        text-decoration: none;
+    }
+
+    @media only screen and (min-width: 600px) {
+        .side,
+        .banner-container {
+            padding: 4rem 2rem;
+        }
+    }
+    @media only screen and (min-width: 900px) {
+        section {
+            padding: 0 2rem;
+        }
+
+        .section-container{
+            display: flex;
+            justify-content: center;
+            max-width: 1216px;
+            margin: 0 auto;
+
+        }
+
+        .side{
+            padding: 4rem 0;
+            padding-right: 136px;
+        }
+
+        .section-container > div {
+            flex: 1;
+        }
+
+        .banner-container{
+            max-width: 600px;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+        }
+
+        .banner-container h2 {
+            font-size: 2rem;
+        }
+
+        .banner{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 385px;
+        }
+
+        h1{
+            font-size: 3rem;
+        }
+    }
 </style>
 
 <section>
-    <h1>Contáctanos</h1>
-    <p>¿Te gustaría saber más sobre nuestros inmuebles y empresas?. Completa el formulario y un miembro de nuestro equipo te contactará lo antes posible.</p>
-
+    <div class="section-container">
+        <div class="side">
+            <div class="intro">
+                <h1>Contáctanos</h1>
+                <p>
+                    ¿Te gustaría saber más sobre nuestros inmuebles y empresas?.
+                    Completa el formulario y un miembro de nuestro equipo te
+                    contactará lo antes posible.
+                </p>
+            </div>
+    
+            <form action="https://submit-form.com/vdB38RNTP">
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Introduce tu nombre"
+                    required=""
+                />
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Correo electrónico"
+                    required=""
+                />
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Escribe aquí tu mensaje"
+                    required=""></textarea>
+                <button type="submit">Enviar -></button>
+            </form>
+        </div>
+        <div class="banner-container">
+            <div class="banner">
+                <h2>
+                    Descubre más sobre nosotros en la página de noticias y
+                    comunicados
+                </h2>
+                <a href="/noticias">Ver noticias y comunicados -></a>
+            </div>
+        </div>
+    </div>
 </section>
 
-
-<script>
-
-</script>
+<script></script>
