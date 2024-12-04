@@ -2,14 +2,14 @@
 title: 'La importancia de un concreto de calidad'
 description: 'El concreto premezclado es un componente esencial en la construcción moderna, y su calidad puede marcar la diferencia entre una estructura duradera y una que se deteriore rápidamente. En Cantera La Danta, sabemos que la calidad no es negociable, y es por eso que seguimos estrictos estándares para garantizar que cada proyecto tenga el mejor material posible.'
 pubDate: 'Nov 12 2024'
-heroImage: '/noticias-images/distribuidor-los-pinos.jpg'
+heroImage: '/morgado-astro/noticias-images/distribuidor-los-pinos.jpg'
 ---
 
 <div class="blog-content">
   <div class="blog-section">
     <p>El concreto premezclado es un componente esencial en la construcción moderna, y su calidad puede marcar la diferencia entre una estructura duradera y una que se deteriore rápidamente. En Cantera La Danta, sabemos que la calidad no es negociable, y es por eso que seguimos estrictos estándares para garantizar que cada proyecto tenga el mejor material posible.</p>
     
-![concreto de calidad](/noticias-images/distribuidor-los-pinos.jpg)
+![concreto de calidad](/morgado-astro/noticias-images/distribuidor-los-pinos.jpg)
   </div>
 
   <div class="blog-section">
@@ -45,7 +45,7 @@ Cada lote de concreto que producimos pasa por un riguroso proceso de control de 
 Gracias a nuestro compromiso con la calidad, hemos suministrado concreto premezclado para algunos de los proyectos más importantes en el estado Bolívar. Desde puentes y carreteras hasta desarrollos residenciales, nuestras soluciones han demostrado ser duraderas y confiables, contribuyendo al desarrollo sostenible de la región.
     </p>
 
-![concreto de alta calidad](/noticias-images/distribuidor.jpg)
+![concreto de alta calidad](/morgado-astro/noticias-images/distribuidor.jpg)
 
   <p>
 En la construcción, la calidad del concreto premezclado es fundamental. En Cantera La Danta, nos enorgullecemos de entregar productos que cumplen y superan los estándares de la industria, asegurando que cada proyecto sea sólido, seguro y duradero.

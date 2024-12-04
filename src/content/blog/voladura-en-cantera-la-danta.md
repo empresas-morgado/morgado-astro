@@ -2,7 +2,7 @@
 title: 'Voladura en Cantera la Danta'
 description: 'La voladura es un proceso fundamental en la extracción de piedra en Cantera La Danta. Este método nos permite liberar y recolectar grandes cantidades de material de manera segura y eficiente, asegurando la calidad y continuidad en la producción de agregados para la construcción. En este post, te mostramos un video del proceso de voladura y explicamos cómo garantizamos la seguridad y eficacia en cada paso.'
 pubDate: 'Nov 11 2024'
-heroImage: '/noticias-images/explosion.jpg'
+heroImage: '/morgado-astro/noticias-images/explosion.jpg'
 ---
 
 <div class="blog-content">
@@ -10,7 +10,7 @@ heroImage: '/noticias-images/explosion.jpg'
   <p>
   La voladura es un proceso fundamental en la extracción de piedra en Cantera La Danta. Este método nos permite liberar y recolectar grandes cantidades de material de manera segura y eficiente, asegurando la calidad y continuidad en la producción de agregados para la construcción. En este post, te mostramos un video del proceso de voladura y explicamos cómo garantizamos la seguridad y eficacia en cada paso.</p>
 
-  ![explosion](/noticias-images/explosion.jpg)
+  ![explosion](/morgado-astro/noticias-images/explosion.jpg)
   </div>
 
   <div class="blog-section">
@@ -18,7 +18,7 @@ heroImage: '/noticias-images/explosion.jpg'
     <p>
     La voladura es una técnica que se utiliza para fragmentar grandes masas de roca en fragmentos más pequeños que pueden ser procesados y transportados fácilmente. En Cantera La Danta, empleamos este método con el máximo cuidado y siguiendo todas las normativas de seguridad.
     </p>
-    <img src="/noticias-images/despues-explosion.jpg" alt="Imagen de la cantera después de la voladura">
+    <img src="/morgado-astro/noticias-images/despues-explosion.jpg" alt="Imagen de la cantera después de la voladura">
   </div>
 
   <div class="blog-section">

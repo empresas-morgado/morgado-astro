@@ -2,7 +2,7 @@
 title: 'Ciudad Guayana: motor del desarrollo en Venezuela'
 description: 'Ubicada en el corazón del estado Bolívar, Ciudad Guayana representa uno de los centros más dinámicos de desarrollo económico e industrial en Venezuela. Gracias a su ubicación estratégica en la confluencia de los ríos Caroní y Orinoco, esta ciudad se ha convertido en un eje clave para la industria y el comercio, desempeñando un papel crucial en la historia moderna del país.'
 pubDate: 'Nov 13 2024'
-heroImage: '/noticias-images/aliviadero.jpg'
+heroImage: '/morgado-astro/noticias-images/aliviadero.jpg'
 ---
 
 
@@ -22,7 +22,7 @@ heroImage: '/noticias-images/aliviadero.jpg'
   <div class="blog-section">
   <p>Ubicada en el corazón del estado Bolívar, Ciudad Guayana representa uno de los centros más dinámicos de desarrollo económico e industrial en Venezuela. Gracias a su ubicación estratégica en la confluencia de los ríos Caroní y Orinoco, esta ciudad se ha convertido en un eje clave para la industria y el comercio, desempeñando un papel crucial en la historia moderna del país.</p>
     
-![Ciudad Guayana](/noticias-images/aliviadero.jpg)
+![Ciudad Guayana](/morgado-astro/noticias-images/aliviadero.jpg)
   </div>
 
   <div class="blog-section">
