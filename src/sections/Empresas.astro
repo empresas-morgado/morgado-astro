@@ -6,6 +6,7 @@ import somixImage from "../images/somix.jpg";
 
 <style>
     section {
+        padding: 3rem 1rem;
         padding: 0 1rem;
     }
 
@@ -20,7 +21,7 @@ import somixImage from "../images/somix.jpg";
 
     .empresas-intro {
         text-align: center;
-        padding: 3rem 0;
+        padding-bottom: 3rem;
         border-bottom: 1px solid #cccccc;
     }
 
@@ -102,9 +103,8 @@ import somixImage from "../images/somix.jpg";
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        padding: 2rem 0;
+        padding-top: 1.5rem;
         gap: 1rem;
-
         color: #505050;
         text-decoration: none;
         text-align: right;
@@ -112,8 +112,14 @@ import somixImage from "../images/somix.jpg";
 
     @media only screen and (min-width: 600px) {
         section {
-            padding: 0 2rem;
+            padding: 4rem 2rem;
         }
+        .empresa {
+            padding: 4rem 0;
+        }
+        .empresas-intro {
+        padding-bottom: 4rem;
+    }
     }
 
     @media only screen and (min-width: 900px) {
