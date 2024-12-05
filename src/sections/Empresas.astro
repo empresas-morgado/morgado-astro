@@ -7,9 +7,14 @@ import somixImage from "../images/somix.jpg";
 <style>
     section {
         padding: 3rem 1rem;
+        padding: 0 1rem;
+    }
+
+    .section-container {
         max-width: 1216px;
         margin: 0 auto;
     }
+
     h2 {
         margin-bottom: 1rem;
     }
@@ -36,7 +41,7 @@ import somixImage from "../images/somix.jpg";
 
     .empresa {
         border-bottom: 1px solid #cccccc;
-        padding: 3rem 0 3rem 0;
+        padding: 3rem 0;
     }
 
     .empresa-intro h3 {
@@ -50,6 +55,10 @@ import somixImage from "../images/somix.jpg";
     .empresa-intro p {
         font-size: 1.125rem;
         font-weight: 500;
+    }
+
+    .empresa:nth-child(2) {
+        border: none;
     }
 
     .empresa-text {
@@ -102,9 +111,6 @@ import somixImage from "../images/somix.jpg";
     }
 
     @media only screen and (min-width: 600px) {
-        /* h2{
-            margin-bottom: 2rem;
-        } */
         section {
             padding: 4rem 2rem;
         }
@@ -117,17 +123,17 @@ import somixImage from "../images/somix.jpg";
     }
 
     @media only screen and (min-width: 900px) {
-
-        .empresas-intro p{
-            font-size: 1.25rem;
+        .empresas-intro {
+            padding: 4rem 0;
         }
 
         .empresa {
             display: flex;
             gap: 6rem;
+            padding: 4rem 0;
         }
 
-        .empresa-intro p{
+        .empresa-intro p {
             font-size: 1.25rem;
         }
 
@@ -141,125 +147,130 @@ import somixImage from "../images/somix.jpg";
 </style>
 
 <section>
-    <div class="empresas-intro">
-        <div class="empresas-intro-content">
-            <h2>Pioneros en el sector construcción de Guayana</h2>
-            <p>
-                Conoce las empresas que forman parte de nuestra historia,
-                diseñadas para satisfacer las demandas del mercado actual y
-                potenciar el crecimiento de Venezuela.
-            </p>
+    <div class="section-container">
+        <div class="empresas-intro">
+            <div class="empresas-intro-content">
+                <h2>Pioneros en el sector construcción de Guayana</h2>
+                <p>
+                    Conoce las empresas que forman parte de nuestra historia,
+                    diseñadas para satisfacer las demandas del mercado actual y
+                    potenciar el crecimiento de Venezuela.
+                </p>
+            </div>
         </div>
-    </div>
 
-    <div class="empresas-activas">
-        <div class="empresa">
-            <div class="empresa-info">
-                <div class="empresa-intro">
-                    <h3>Cantera La Danta</h3>
-                    <p>
-                        Extracción y comercialización de recursos de
-                        construcción
+        <div class="empresas-activas">
+            <div class="empresa">
+                <div class="empresa-info">
+                    <div class="empresa-intro">
+                        <h3>Cantera La Danta</h3>
+                        <p>
+                            Extracción y comercialización de recursos de
+                            construcción
+                        </p>
+                    </div>
+                    <p class="empresa-text">
+                        Empresa dedicada a trabajos de voladura, trituración y
+                        comercialización de piedra, necesaria como insumo
+                        fundamental tanto en el concreto premezclado en la
+                        dosificación que exija la resistencia según su uso, como
+                        en el concreto asfaltico.
                     </p>
+                    <div class="empresas-links">
+                        <a class="contacto">Entrar en contacto</a>
+                        <a
+                            class="mas"
+                            href="/morgado-astro/empresas/cantera-la-danta"
+                            >Saber más <svg
+                                width="12"
+                                height="12"
+                                viewBox="0 0 12 12"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M6.75572 11.0909L5.88072 10.2272L9.48299 6.62497H0.153442V5.37497H9.48299L5.88072 1.78406L6.75572 0.909058L11.8466 5.99997L6.75572 11.0909Z"
+                                    fill="white"></path>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-                <p class="empresa-text">
-                    Empresa dedicada a trabajos de voladura, trituración y
-                    comercialización de piedra, necesaria como insumo
-                    fundamental tanto en el concreto premezclado en la
-                    dosificación que exija la resistencia según su uso, como en
-                    el concreto asfaltico.
-                </p>
-                <div class="empresas-links">
-                    <a class="contacto">Entrar en contacto</a>
-                    <a class="mas" href="/morgado-astro/empresas/cantera-la-danta"
-                        >Saber más <svg
-                            width="12"
-                            height="12"
-                            viewBox="0 0 12 12"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M6.75572 11.0909L5.88072 10.2272L9.48299 6.62497H0.153442V5.37497H9.48299L5.88072 1.78406L6.75572 0.909058L11.8466 5.99997L6.75572 11.0909Z"
-                                fill="white"></path>
-                        </svg>
-                    </a>
+
+                <div class="empresa-img">
+                    <Image
+                        src={laDantaImage}
+                        alt="Cantera La Danta"
+                        width={1000}
+                        height={700}
+                    />
+                </div>
+            </div>
+            <div class="empresa">
+                <div class="empresa-info">
+                    <div class="empresa-intro">
+                        <h3>Somix, CA.</h3>
+                        <p>Concreto pre mezclado y bombeo de concreto</p>
+                    </div>
+                    <p class="empresa-text">
+                        Líder en el mercado de concreto pre mezclado del estado
+                        Bolívar. Exigentes controles de seguridad le han
+                        otorgado la experiencia que garantiza la resistencia
+                        requerida, a la par de la inquebrantable responsabilidad
+                        que le asegura la entrega a tiempo en las obras
+                        ejecutadas por el cliente.
+                    </p>
+                    <div class="empresas-links">
+                        <a class="contacto">Entrar en contacto</a>
+                        <a class="mas" href="/morgado-astro/empresas/somix"
+                            >Saber más <svg
+                                width="12"
+                                height="12"
+                                viewBox="0 0 12 12"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M6.75572 11.0909L5.88072 10.2272L9.48299 6.62497H0.153442V5.37497H9.48299L5.88072 1.78406L6.75572 0.909058L11.8466 5.99997L6.75572 11.0909Z"
+                                    fill="white"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="empresa-img">
+                    <Image
+                        src={somixImage}
+                        alt="Cantera La Danta"
+                        width={1000}
+                        height={700}
+                    />
                 </div>
             </div>
 
-            <div class="empresa-img">
-                <Image
-                    src={laDantaImage}
-                    alt="Cantera La Danta"
-                    width={1000}
-                    height={700}
-                />
-            </div>
+            <!-- <a href="/morgado-astro/nosotros" class="descubre">
+                <p>Descubre más sobre nuestra historia empresarial</p>
+                <svg
+                    width="48"
+                    height="48"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <circle cx="24" cy="24" r="24" fill="#222973"></circle>
+                    <path
+                        d="M15.75 24L32.25 24"
+                        stroke="white"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    <path
+                        d="M25.5 17.25L32.25 24L25.5 30.75"
+                        stroke="white"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </svg>
+            </a> -->
         </div>
-        <div class="empresa">
-            <div class="empresa-info">
-                <div class="empresa-intro">
-                    <h3>Somix, CA.</h3>
-                    <p>Concreto pre mezclado y bombeo de concreto</p>
-                </div>
-                <p class="empresa-text">
-                    Líder en el mercado de concreto pre mezclado del estado
-                    Bolívar. Exigentes controles de seguridad le han otorgado la
-                    experiencia que garantiza la resistencia requerida, a la par
-                    de la inquebrantable responsabilidad que le asegura la
-                    entrega a tiempo en las obras ejecutadas por el cliente.
-                </p>
-                <div class="empresas-links">
-                    <a class="contacto">Entrar en contacto</a>
-                    <a class="mas" href="/morgado-astro/empresas/somix"
-                        >Saber más <svg
-                            width="12"
-                            height="12"
-                            viewBox="0 0 12 12"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M6.75572 11.0909L5.88072 10.2272L9.48299 6.62497H0.153442V5.37497H9.48299L5.88072 1.78406L6.75572 0.909058L11.8466 5.99997L6.75572 11.0909Z"
-                                fill="white"></path>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-            <div class="empresa-img">
-                <Image
-                    src={somixImage}
-                    alt="Cantera La Danta"
-                    width={1000}
-                    height={700}
-                />
-            </div>
-        </div>
-
-        <a href="/morgado-astro/nosotros" class="descubre">
-            <p>Descubre más sobre nuestra historia empresarial</p>
-            <svg
-                width="48"
-                height="48"
-                viewBox="0 0 48 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <circle cx="24" cy="24" r="24" fill="#222973"></circle>
-                <path
-                    d="M15.75 24L32.25 24"
-                    stroke="white"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-                <path
-                    d="M25.5 17.25L32.25 24L25.5 30.75"
-                    stroke="white"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-            </svg>
-        </a>
     </div>
 </section>

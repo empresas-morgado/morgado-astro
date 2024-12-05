@@ -5,12 +5,15 @@ const today = new Date();
 <style>
 	footer {
 		border-top: 1px solid #CCCCCC;
+		padding: 3rem 1rem;
+	}
+
+	.section-container{
+		max-width: 1216px;
+		margin: 0 auto;
 	}
 
 	.footer-section{
-		max-width: 1216px;
-		margin: 0 auto;
-		padding: 4rem 1rem;
 		padding-bottom: 1rem;
 		
 	}
@@ -58,8 +61,12 @@ const today = new Date();
 
 	@media only screen and (min-width: 600px) {
 
+		footer{
+			padding: 3rem 2rem;
+		}
+
 		.footer-section{
-			padding: 4rem 1rem;
+
 			padding-bottom: 1rem;
 
 		}
@@ -73,6 +80,9 @@ const today = new Date();
 	}
 
 	@media only screen and (min-width: 900px) {
+		footer{
+			padding: 4rem 2rem;
+		}
 		.footer-section {
 			display: flex;
 			flex-direction: row-reverse;
@@ -91,38 +101,41 @@ const today = new Date();
 </style>
 
 <footer>
-	<div class="footer-section">
-		<div class="footer-container">
-			<div class="container-block">
-				<p class="block-title">Sobre Nosotros</p>
-				<a href="#">Nuestra Historia</a>
-				<a href="#">Noticias y comunicados</a>
-				<a href="#">Libro Anibal Morgado</a>
+	<div class="section-container">
+		<div class="footer-section">
+			<div class="footer-container">
+				<div class="container-block">
+					<p class="block-title">Sobre Nosotros</p>
+					<a href="#">Nuestra Historia</a>
+					<a href="#">Noticias y comunicados</a>
+					<a href="#">Libro Anibal Morgado</a>
+				</div>
+				<div class="container-block">
+					<p class="block-title">Empresas actuales</p>
+					<a href="#">Cantera la Danta</a>
+					<a href="#">Somix, CA.</a>
+				</div>
+				<div class="container-block">
+					<p class="block-title">Inmuebles disponibles</p>
+					<a href="#">Torre CEM</a>
+					<a href="#">Centro Empresarial Guayana</a>
+					<a href="#">Centro Comercial Chilemex</a>
+					<a href="#">Centro Comercial Caura</a>
+				</div>
 			</div>
-			<div class="container-block">
-				<p class="block-title">Empresas actuales</p>
-				<a href="#">Cantera la Danta</a>
-				<a href="#">Somix, CA.</a>
-			</div>
-			<div class="container-block">
-				<p class="block-title">Inmuebles disponibles</p>
-				<a href="#">Torre CEM</a>
-				<a href="#">Centro Empresarial Guayana</a>
-				<a href="#">Centro Comercial Chilemex</a>
-				<a href="#">Centro Comercial Caura</a>
+	
+			<div class="footer-foot">
+				<h2>Corporación Empresas Morgado</h2>
+				<p>
+					Orgullosos de haber contruibuido a la construcción de la Guayana
+					moderna
+				</p>
 			</div>
 		</div>
-
-		<div class="footer-foot">
-			<h2>Corporación Empresas Morgado</h2>
-			<p>
-				Orgullosos de haber contruibuido a la construcción de la Guayana
-				moderna
-			</p>
+	
+		<div class="end">
+			&copy; {today.getFullYear()} Corporación Empresas Morgado. All rights reserved.
 		</div>
-	</div>
 
-	<div class="end">
-		&copy; {today.getFullYear()} Your name here. All rights reserved.
 	</div>
 </footer>

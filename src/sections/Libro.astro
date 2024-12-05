@@ -6,9 +6,14 @@ import libro from "../../src/images/libro.jpg";
 <style>
     section {
         padding: 3rem 1rem;
+    }
+
+    .section-container {
+         main
         max-width: 1216px;
         margin: 0 auto;
     }
+
     .libro {
         max-width: 1216px;
         margin: 0 auto;
@@ -59,59 +64,82 @@ import libro from "../../src/images/libro.jpg";
     }
 
     @media only screen and (min-width: 900px) {
-        .libro-desktop{
+        section {
+            padding: 4rem 2rem;
+        }
+        .libro-desktop {
             display: block;
         }
-        .libro-mobile{
+        .libro-mobile {
             display: none;
         }
 
-        section {
-            display: flex; 
+        .section-container {
+            display: flex;
         }
 
-        section > div{
+        .section-container > div {
             flex: 1;
         }
 
         h2 {
             font-size: 3rem;
+            max-width: 450px;
         }
 
-        .libro-desktop img{
+        .libro-desktop img {
             margin-left: auto;
             max-width: 400px;
         }
+
+        p {
+        margin-bottom: 1.5rem;
+    }
     }
 </style>
 
 <section>
-    <div class="libro">
-        <h2>Aníbal Morgado, un legado de visión y crecimiento</h2>
-        <p>
-            A través de sus páginas, Aníbal comparte las lecciones aprendidas a
-            lo largo de su vida, su visión sobre el desarrollo de Guayana, y el
-            papel clave que jugó en la modernización de la región.
-        </p>
-        <Image class="libro-mobile" src={libro} alt="Libro" width={1000} height={700} />
+    <div class="section-container">
+        <div class="libro">
+            <h2>Aníbal Morgado, un legado de visión y crecimiento</h2>
+            <p>
+                A través de sus páginas, Aníbal comparte las lecciones
+                aprendidas a lo largo de su vida, su visión sobre el desarrollo
+                de Guayana, y el papel clave que jugó en la modernización de la
+                región.
+            </p>
+            <Image
+                class="libro-mobile"
+                src={libro}
+                alt="Libro"
+                width={1000}
+                height={700}
+            />
 
-        <div class="button">
-            <button
-                >Obtener el libro <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        d="M8.75572 13.0909L7.88072 12.2273L11.483 8.62503H2.15344V7.37503H11.483L7.88072 3.78412L8.75572 2.90912L13.8466 8.00003L8.75572 13.0909Z"
-                        fill="#FFFFFF"></path>
-                </svg>
-            </button>
+            <div class="button">
+                <button
+                    >Obtener el libro <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M8.75572 13.0909L7.88072 12.2273L11.483 8.62503H2.15344V7.37503H11.483L7.88072 3.78412L8.75572 2.90912L13.8466 8.00003L8.75572 13.0909Z"
+                            fill="#FFFFFF"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
-    </div>
-    <div class="libro-desktop">
-        <Image class="mobile-image" src={libro} alt="Libro" width={1000} height={700} />
+        <div class="libro-desktop">
+            <Image
+                class="mobile-image"
+                src={libro}
+                alt="Libro"
+                width={1000}
+                height={700}
+            />
+        </div>
     </div>
 </section>
