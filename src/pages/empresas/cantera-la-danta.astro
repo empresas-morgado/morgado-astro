@@ -3,6 +3,10 @@ import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+
+import { Image } from "astro:assets";
+
+import laDantaImage from "../../images/cantera-la-danta.jpg";
 ---
 
 <style>
@@ -58,7 +62,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
     }
 
     .block-container:nth-child(2) {
-        border: 1px solid red;
         height: 321px;
     }
 
@@ -133,7 +136,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
                 </div>
 
                 <div class="block-container">
-                    <h2>Slider</h2>
+                    <Image
+                        src={laDantaImage}
+                        alt="Cantera La Danta"
+                        width={1000}
+                        height={700}
+                    />
                 </div>
             </div>
         </section>
