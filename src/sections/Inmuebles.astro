@@ -12,10 +12,11 @@ import centroGuayana2 from "../images/centro-empresarial-guayana-2.jpg";
         background-color: #f3f3f3;
         /* border: 1px solid red; */
         overflow: hidden;
+        padding: 3rem 1rem;
     }
 
     .inmuebles {
-        padding: 4rem 1rem;
+
         max-width: 1216px;
         margin: 0 auto;
     }
@@ -78,9 +79,12 @@ import centroGuayana2 from "../images/centro-empresarial-guayana-2.jpg";
     }
 
     @media only screen and (min-width: 600px){
-        .inmuebles{
-            padding: 6rem 2rem;
+        section{
+            padding: 3rem 2rem;
         }
+        /* .inmuebles{
+            padding: 6rem 2rem;
+        } */
 
         .inmuebles-intro{
             margin-bottom: 4rem;
@@ -93,6 +97,9 @@ import centroGuayana2 from "../images/centro-empresarial-guayana-2.jpg";
 
 
     @media only screen and (min-width: 900px){
+        section{
+            padding: 4rem 2rem;
+        }
         .inmuebles-intro{
             display: flex;
             gap: 4rem;
@@ -106,6 +113,10 @@ import centroGuayana2 from "../images/centro-empresarial-guayana-2.jpg";
             font-size: 3rem;
             margin-bottom: 0;
         }
+    }
+
+    .splide__track{
+        /* overflow: visible; */
     }
 </style>
 
@@ -121,7 +132,7 @@ import centroGuayana2 from "../images/centro-empresarial-guayana-2.jpg";
         </div>
 
         <div class="cards">
-            <section class="splide empresas" aria-label="Splide Basic HTML Example">
+            <div class="splide empresas" aria-label="Splide Basic HTML Example">
                 <div class="splide__track">
                     <ul class="splide__list">
                         <li class="splide__slide card">
@@ -222,7 +233,7 @@ import centroGuayana2 from "../images/centro-empresarial-guayana-2.jpg";
                         </li>
                     </ul>
                 </div>
-            </section>
+            </div>
         </div>
         <div class="slider-buttons">
             <button class="back">
@@ -284,11 +295,12 @@ import centroGuayana2 from "../images/centro-empresarial-guayana-2.jpg";
             arrows: false,
             pagination: false,
             fixedWidth: "384px",
-            gap: "1rem",
+            gap: "2rem",
             breakpoints: {
                 mediaQuery: 'min',
                 900: {
                     fixedWidth: "260px",
+                    gap: "1rem"
                 },
             },
         });
