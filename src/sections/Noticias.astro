@@ -13,13 +13,13 @@ const posts = (await getCollection("blog")).sort(
     }
 
     .container {
-        padding: 4rem 1rem;
+        padding: 3rem 1rem;
         max-width: 1216px;
         margin: 0 auto;
     }
 
     h2 {
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
     }
 
     .numero-1 {
@@ -59,7 +59,7 @@ const posts = (await getCollection("blog")).sort(
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        padding: 2rem 0;
+        padding-top: 1.5rem;
         gap: 1rem;
 
         color: #505050;
@@ -120,6 +120,9 @@ const posts = (await getCollection("blog")).sort(
         .container {
             padding: 4rem 2rem;
         }
+        h2 {
+        margin-bottom: 4rem;
+    }
     }
     @media only screen and (min-width: 900px) {
         .numero-2 {
