@@ -5,15 +5,18 @@ import torreCem from "../images/torre-cem.jpg";
 import chilemex from "../images/chilemex.jpg";
 import centroGuayana from "../images/centro-empresarial-guayana.jpg";
 import centroGuayana2 from "../images/centro-empresarial-guayana-2.jpg";
-import image1 from "../images/hero-slider/image1.jpg";
-import image2 from "../images/hero-slider/image2.jpg";
-import image3 from "../images/hero-slider/image3.jpg";
-import image4 from "../images/hero-slider/image4.jpg";
-import image5 from "../images/hero-slider/image5.jpg";
-import image6 from "../images/hero-slider/image6.jpg";
-import image7 from "../images/hero-slider/image7.jpg";
-import image8 from "../images/hero-slider/image8.jpg";
-import image9 from "../images/hero-slider/image9.jpg";
+import image1 from "../images/hero-slider/photo1.jpg";
+import image2 from "../images/hero-slider/photo2.jpg";
+import image3 from "../images/hero-slider/photo3.jpg";
+import image4 from "../images/hero-slider/photo4.jpg";
+import image5 from "../images/hero-slider/photo5.jpg";
+import image6 from "../images/hero-slider/photo6.jpg";
+import image7 from "../images/hero-slider/photo7.jpg";
+import image8 from "../images/hero-slider/photo8.jpg";
+import image9 from "../images/hero-slider/photo9.jpg";
+import image10 from "../images/hero-slider/photo10.jpg";
+import image11 from "../images/hero-slider/photo11.jpg";
+import image12 from "../images/hero-slider/photo12.jpg";
 ---
 
 <style>
@@ -252,10 +255,7 @@ import image9 from "../images/hero-slider/image9.jpg";
                                     height={600}
                                     loading="eager"
                                 />
-                                <!-- <img
-                                    src="/morgado-astro/hero-slider/image1.jpg"
-                                    alt=""
-                                /> -->
+                    
                             </li>
                             <li class="splide__slide card" style="width: 280px">
                                 <Image
@@ -265,10 +265,7 @@ import image9 from "../images/hero-slider/image9.jpg";
                                     height={600}
                                     loading="eager"
                                 />
-                                <!-- <img
-                                    src="/morgado-astro/hero-slider/image2.jpg"
-                                    alt=""
-                                /> -->
+                   
                             </li>
                             <li class="splide__slide card" style="width: 280px">
                                 <Image
@@ -278,10 +275,7 @@ import image9 from "../images/hero-slider/image9.jpg";
                                     height={600}
                                     loading="eager"
                                 />
-                                <!-- <img
-                                    src="/morgado-astro/hero-slider/image3.jpg"
-                                    alt=""
-                                /> -->
+                     
                             </li>
                             <li class="splide__slide card" style="width: 592px">
                                 <Image
@@ -291,10 +285,7 @@ import image9 from "../images/hero-slider/image9.jpg";
                                     height={600}
                                     loading="eager"
                                 />
-                                <!-- <img
-                                    src="/morgado-astro/hero-slider/image4.jpg"
-                                    alt=""
-                                /> -->
+     
                             </li>
                             <li class="splide__slide card" style="width: 280px">
                                 <Image
@@ -304,10 +295,7 @@ import image9 from "../images/hero-slider/image9.jpg";
                                     height={600}
                                     loading="eager"
                                 />
-                                <!-- <img
-                                    src="/morgado-astro/hero-slider/image5.jpg"
-                                    alt=""
-                                /> -->
+       
                             </li>
                             <li class="splide__slide card" style="width: 280px">
                                 <Image
@@ -317,10 +305,7 @@ import image9 from "../images/hero-slider/image9.jpg";
                                     height={600}
                                     loading="eager"
                                 />
-                                <!-- <img
-                                    src="/morgado-astro/hero-slider/image6.jpg"
-                                    alt=""
-                                /> -->
+    
                             </li>
                             <li class="splide__slide card" style="width: 592px">
                                 <Image
@@ -330,10 +315,7 @@ import image9 from "../images/hero-slider/image9.jpg";
                                     height={600}
                                     loading="eager"
                                 />
-                                <!-- <img
-                                    src="/morgado-astro/hero-slider/image7.jpg"
-                                    alt=""
-                                /> -->
+                    
                             </li>
                             <li class="splide__slide card" style="width: 280px">
                                 <Image
@@ -343,10 +325,37 @@ import image9 from "../images/hero-slider/image9.jpg";
                                     height={600}
                                     loading="eager"
                                 />
-                                <!-- <img
-                                    src="/morgado-astro/hero-slider/image8.jpg"
-                                    alt=""
-                                /> -->
+                
+                            </li>
+                            <li class="splide__slide card" style="width: 592px">
+                                <Image
+                                    src={image10}
+                                    alt="Cantera La Danta"
+                                    width={592}
+                                    height={600}
+                                    loading="eager"
+                                />
+                  
+                            </li>
+                            <li class="splide__slide card" style="width: 280px">
+                                <Image
+                                    src={image11}
+                                    alt="Cantera La Danta"
+                                    width={280}
+                                    height={600}
+                                    loading="eager"
+                                />
+                    
+                            </li>
+                            <li class="splide__slide card" style="width: 280px">
+                                <Image
+                                    src={image12}
+                                    alt="Cantera La Danta"
+                                    width={280}
+                                    height={600}
+                                    loading="eager"
+                                />
+              
                             </li>
                             <li class="splide__slide card" style="width: 280px">
                                 <Image
@@ -356,10 +365,7 @@ import image9 from "../images/hero-slider/image9.jpg";
                                     height={600}
                                     loading="eager"
                                 />
-                                <!-- <img
-                                    src="/morgado-astro/hero-slider/image9.jpg"
-                                    alt=""
-                                /> -->
+                        
                             </li>
                         </ul>
                     </div>
@@ -415,18 +421,18 @@ import image9 from "../images/hero-slider/image9.jpg";
         const splideHero = new Splide(".splide.hero", {
             type: "loop",
             perPage: 2,
-            perMove: 1,
+            perMove: 3,
             arrows: false,
             pagination: false,
             autoWidth: true,
             gap: "2rem",
             start: 0,
-            // height: "333px", // Set fixed height for the slider
             autoplay: true,
-            pauseOnHover: false,
+            pauseOnHover: true,
             pauseOnFocus: false,
-            interval: 3000,
+            interval: 4000,
             easing: "ease",
+            speed: 1200
         });
         splideHero.mount();
 
