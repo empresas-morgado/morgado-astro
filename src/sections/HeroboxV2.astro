@@ -14,9 +14,12 @@ import image9 from "../images/new-hero-slider/image9.jpg";
 
 <style>
     section {
+        background: #f3f3f3;
+    }
+    .section-container {
         max-width: 1216px;
         margin: 0 auto;
-        padding: 3rem 0 0 0;
+        padding: 3rem 0 3rem 0;
     }
 
     .small {
@@ -25,7 +28,6 @@ import image9 from "../images/new-hero-slider/image9.jpg";
         font-size: 0.8125rem;
         font-weight: 600;
         line-height: 100%;
-        /* 0.8125rem */
         letter-spacing: 0.20313rem;
         text-transform: uppercase;
         margin-bottom: 0.5rem;
@@ -37,7 +39,6 @@ import image9 from "../images/new-hero-slider/image9.jpg";
         text-align: center;
         font-weight: 400;
         line-height: 107%;
-        /* 3.21rem */
         letter-spacing: -0.06rem;
         margin-bottom: 2rem;
         max-width: 640px;
@@ -63,15 +64,29 @@ import image9 from "../images/new-hero-slider/image9.jpg";
         margin: 0 auto;
     }
 
-    @media only screen and (min-width: 600px) {
-        section {
-            padding: 3rem 1rem 0 1rem;
-        }
+    .hero-button {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
     }
 
-    @media only screen and (max-width: 599px) {
-        section {
-            padding: 3rem 0.5rem 0 0.5rem;
+    .hero-button a {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1.6875rem;
+
+        border-radius: 1.375rem;
+        background: #222973;
+
+        color: #fff;
+        text-decoration: none;
+
+        gap: 6px;
+    }
+
+    @media only screen and (min-width: 600px) {
+        .section-container {
+            padding: 3rem 1rem 3rem 1rem;
         }
     }
 
@@ -92,7 +107,6 @@ import image9 from "../images/new-hero-slider/image9.jpg";
             font-style: normal;
             font-weight: 400;
             line-height: 161%;
-            /* 1.61rem */
             margin-top: 0.5rem;
             opacity: 0;
             transition: opacity 400ms;
@@ -102,7 +116,6 @@ import image9 from "../images/new-hero-slider/image9.jpg";
             padding: 20px 0;
         }
 
-        /* // Generic Slide */
         .desktop .splide__slide img {
             display: block;
             width: 100%;
@@ -112,7 +125,6 @@ import image9 from "../images/new-hero-slider/image9.jpg";
             transform-origin: center center;
         }
 
-        /* // Active Slide */
         .desktop .splide__slide.is-active img {
             transform: scale(1);
         }
@@ -120,148 +132,273 @@ import image9 from "../images/new-hero-slider/image9.jpg";
         .desktop .splide__slide.is-active p {
             opacity: 1;
         }
+
+        .hero-button {
+            margin-top: 1rem;
+        }
     }
 </style>
 
 <section>
-    <p class="small">desde 1966</p>
-    <h1>Corporación Empresas Morgado</h1>
+    <div class="section-container">
+        <p class="small">desde 1966</p>
+        <h1>Corporación Empresas Morgado</h1>
 
-    <div class="slider-hero desktop">
-        <div id="image-carousel" class="splide hero" aria-label="Splide Basic HTML Example">
-            <div class="splide__track">
-                <ul class="splide__list">
-                    <li class="splide__slide image-container">
-                        <Image src={image1}
-                            alt="Inspección a la obra Autopista Ciud. Guayana-Bolivar, Anibal Morgado junto al Ministro Leopoldo Sucre Figarella"
-                            width={592} height={600} loading="eager" />
-                        <p>
-                            Inspección a la obra Autopista Ciud.
-                            Guayana-Bolivar, Anibal Morgado junto al Ministro
-                            Leopoldo Sucre Figarella
-                        </p>
-                    </li>
-                    <li class="splide__slide image-container">
-                        <Image src={image2} alt="Panorámica del Complejo Hidroeléctrico Macagua" width={592}
-                            height={600} loading="eager" />
-                        <p>Panorámica del Complejo Hidroeléctrico Macagua</p>
-                    </li>
-                    <li class="splide__slide image-container">
-                        <Image src={image3}
-                            alt="Distribuidor Los Pinos, Av.Caracas y Parcelamiento Industrial Los Pinos" width={592}
-                            height={600} loading="eager" />
-                        <p>
-                            Distribuidor Los Pinos, Av.Caracas y Parcelamiento
-                            Industrial Los Pinos
-                        </p>
-                    </li>
-                    <li class="splide__slide image-container">
-                        <Image src={image4} alt="Obras Civiles de la Planta de Pellas / Ferrominera Orinoco" width={592}
-                            height={600} loading="eager" />
-                        <p>
-                            Obras Civiles de la Planta de Pellas / Ferrominera
-                            Orinoco
-                        </p>
-                    </li>
-                    <li class="splide__slide image-container">
-                        <Image src={image5} alt="Obras Civiles -Planta de Briquetas-Orinoco Iron" width={592}
-                            height={600} loading="eager" />
-                        <p>Obras Civiles -Planta de Briquetas-Orinoco Iron</p>
-                    </li>
-                    <li class="splide__slide image-container">
-                        <Image src={image6} alt="Planta de Briqueras - POSVEN" width={592} height={600}
-                            loading="eager" />
-                        <p>Planta de Briqueras - POSVEN</p>
-                    </li>
-                    <li class="splide__slide image-container">
-                        <Image src={image7} alt="Av. Manuel Carlos Piar-San Félix" width={592} height={600}
-                            loading="eager" />
-                        <p>Av. Manuel Carlos Piar-San Félix</p>
-                    </li>
-                    <li class="splide__slide image-container">
-                        <Image src={image8} alt="Avenida Guayana Sector San Félix" width={592} height={600}
-                            loading="eager" />
-                        <p>Avenida Guayana Sector San Félix</p>
-                    </li>
-                    <li class="splide__slide image-container">
-                        <Image src={image9} alt="Asfaltado de la Avenida y el Puente Angosturita sobre el Rio Caroní."
-                            width={592} height={600} loading="eager" />
-                        <p>
-                            Asfaltado de la Avenida y el Puente Angosturita
-                            sobre el Rio Caroní.
-                        </p>
-                    </li>
-                </ul>
+        <div class="slider-hero desktop">
+            <div
+                id="image-carousel"
+                class="splide hero"
+                aria-label="Splide Basic HTML Example"
+            >
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide image-container">
+                            <Image
+                                src={image1}
+                                alt="Inspección a la obra Autopista Ciud. Guayana-Bolivar, Anibal Morgado junto al Ministro Leopoldo Sucre Figarella"
+                                width={592}
+                                height={600}
+                                loading="eager"
+                            />
+                            <p>
+                                Inspección a la obra Autopista Ciud.
+                                Guayana-Bolivar, Anibal Morgado junto al
+                                Ministro Leopoldo Sucre Figarella
+                            </p>
+                        </li>
+                        <li class="splide__slide image-container">
+                            <Image
+                                src={image2}
+                                alt="Panorámica del Complejo Hidroeléctrico Macagua"
+                                width={592}
+                                height={600}
+                                loading="eager"
+                            />
+                            <p>
+                                Panorámica del Complejo Hidroeléctrico Macagua
+                            </p>
+                        </li>
+                        <li class="splide__slide image-container">
+                            <Image
+                                src={image3}
+                                alt="Distribuidor Los Pinos, Av.Caracas y Parcelamiento Industrial Los Pinos"
+                                width={592}
+                                height={600}
+                                loading="eager"
+                            />
+                            <p>
+                                Distribuidor Los Pinos, Av.Caracas y
+                                Parcelamiento Industrial Los Pinos
+                            </p>
+                        </li>
+                        <li class="splide__slide image-container">
+                            <Image
+                                src={image4}
+                                alt="Obras Civiles de la Planta de Pellas / Ferrominera Orinoco"
+                                width={592}
+                                height={600}
+                                loading="eager"
+                            />
+                            <p>
+                                Obras Civiles de la Planta de Pellas /
+                                Ferrominera Orinoco
+                            </p>
+                        </li>
+                        <li class="splide__slide image-container">
+                            <Image
+                                src={image5}
+                                alt="Obras Civiles -Planta de Briquetas-Orinoco Iron"
+                                width={592}
+                                height={600}
+                                loading="eager"
+                            />
+                            <p>
+                                Obras Civiles -Planta de Briquetas-Orinoco Iron
+                            </p>
+                        </li>
+                        <li class="splide__slide image-container">
+                            <Image
+                                src={image6}
+                                alt="Planta de Briqueras - POSVEN"
+                                width={592}
+                                height={600}
+                                loading="eager"
+                            />
+                            <p>Planta de Briqueras - POSVEN</p>
+                        </li>
+                        <li class="splide__slide image-container">
+                            <Image
+                                src={image7}
+                                alt="Av. Manuel Carlos Piar-San Félix"
+                                width={592}
+                                height={600}
+                                loading="eager"
+                            />
+                            <p>Av. Manuel Carlos Piar-San Félix</p>
+                        </li>
+                        <li class="splide__slide image-container">
+                            <Image
+                                src={image8}
+                                alt="Avenida Guayana Sector San Félix"
+                                width={592}
+                                height={600}
+                                loading="eager"
+                            />
+                            <p>Avenida Guayana Sector San Félix</p>
+                        </li>
+                        <li class="splide__slide image-container">
+                            <Image
+                                src={image9}
+                                alt="Asfaltado de la Avenida y el Puente Angosturita sobre el Rio Caroní."
+                                width={592}
+                                height={600}
+                                loading="eager"
+                            />
+                            <p>
+                                Asfaltado de la Avenida y el Puente Angosturita
+                                sobre el Rio Caroní.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="slider-hero-mobile">
-        <div id="image-carousel-mobile" class="splide hero" aria-label="Splide Basic HTML Example">
-            <div class="splide__track">
-                <ul class="splide__list">
-                    <li class="splide__slide image-container">
-                        <Image src={image1}
-                            alt="Inspección a la obra Autopista Ciud. Guayana-Bolivar, Anibal Morgado junto al Ministro Leopoldo Sucre Figarella"
-                            width={592} height={600} loading="eager" />
-                        <p>
-                            Inspección a la obra Autopista Ciud.
-                            Guayana-Bolivar, Anibal Morgado junto al Ministro
-                            Leopoldo Sucre Figarella
-                        </p>
-                    </li>
-                    <li class="splide__slide image-container">
-                        <Image src={image2} alt="Panorámica del Complejo Hidroeléctrico Macagua" width={592}
-                            height={600} loading="eager" />
-                        <p>Panorámica del Complejo Hidroeléctrico Macagua</p>
-                    </li>
-                    <li class="splide__slide image-container">
-                        <Image src={image3}
-                            alt="Distribuidor Los Pinos, Av.Caracas y Parcelamiento Industrial Los Pinos" width={592}
-                            height={600} loading="eager" />
-                        <p>
-                            Distribuidor Los Pinos, Av.Caracas y Parcelamiento
-                            Industrial Los Pinos
-                        </p>
-                    </li>
-                    <li class="splide__slide image-container">
-                        <Image src={image4} alt="Obras Civiles de la Planta de Pellas / Ferrominera Orinoco" width={592}
-                            height={600} loading="eager" />
-                        <p>
-                            Obras Civiles de la Planta de Pellas / Ferrominera
-                            Orinoco
-                        </p>
-                    </li>
-                    <li class="splide__slide image-container">
-                        <Image src={image5} alt="Obras Civiles -Planta de Briquetas-Orinoco Iron" width={592}
-                            height={600} loading="eager" />
-                        <p>Obras Civiles -Planta de Briquetas-Orinoco Iron</p>
-                    </li>
-                    <li class="splide__slide image-container">
-                        <Image src={image6} alt="Planta de Briqueras - POSVEN" width={592} height={600}
-                            loading="eager" />
-                        <p>Planta de Briqueras - POSVEN</p>
-                    </li>
-                    <li class="splide__slide image-container">
-                        <Image src={image7} alt="Av. Manuel Carlos Piar-San Félix" width={592} height={600}
-                            loading="eager" />
-                        <p>Av. Manuel Carlos Piar-San Félix</p>
-                    </li>
-                    <li class="splide__slide image-container">
-                        <Image src={image8} alt="Avenida Guayana Sector San Félix" width={592} height={600}
-                            loading="eager" />
-                        <p>Avenida Guayana Sector San Félix</p>
-                    </li>
-                    <li class="splide__slide image-container">
-                        <Image src={image9} alt="Asfaltado de la Avenida y el Puente Angosturita sobre el Rio Caroní."
-                            width={592} height={600} loading="eager" />
-                        <p>
-                            Asfaltado de la Avenida y el Puente Angosturita
-                            sobre el Rio Caroní.
-                        </p>
-                    </li>
-                </ul>
+        <div class="slider-hero-mobile">
+            <div
+                id="image-carousel-mobile"
+                class="splide hero"
+                aria-label="Splide Basic HTML Example"
+            >
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide image-container">
+                            <Image
+                                src={image1}
+                                alt="Inspección a la obra Autopista Ciud. Guayana-Bolivar, Anibal Morgado junto al Ministro Leopoldo Sucre Figarella"
+                                width={592}
+                                height={600}
+                                loading="eager"
+                            />
+                            <p>
+                                Inspección a la obra Autopista Ciud.
+                                Guayana-Bolivar, Anibal Morgado junto al
+                                Ministro Leopoldo Sucre Figarella
+                            </p>
+                        </li>
+                        <li class="splide__slide image-container">
+                            <Image
+                                src={image2}
+                                alt="Panorámica del Complejo Hidroeléctrico Macagua"
+                                width={592}
+                                height={600}
+                                loading="eager"
+                            />
+                            <p>
+                                Panorámica del Complejo Hidroeléctrico Macagua
+                            </p>
+                        </li>
+                        <li class="splide__slide image-container">
+                            <Image
+                                src={image3}
+                                alt="Distribuidor Los Pinos, Av.Caracas y Parcelamiento Industrial Los Pinos"
+                                width={592}
+                                height={600}
+                                loading="eager"
+                            />
+                            <p>
+                                Distribuidor Los Pinos, Av.Caracas y
+                                Parcelamiento Industrial Los Pinos
+                            </p>
+                        </li>
+                        <li class="splide__slide image-container">
+                            <Image
+                                src={image4}
+                                alt="Obras Civiles de la Planta de Pellas / Ferrominera Orinoco"
+                                width={592}
+                                height={600}
+                                loading="eager"
+                            />
+                            <p>
+                                Obras Civiles de la Planta de Pellas /
+                                Ferrominera Orinoco
+                            </p>
+                        </li>
+                        <li class="splide__slide image-container">
+                            <Image
+                                src={image5}
+                                alt="Obras Civiles -Planta de Briquetas-Orinoco Iron"
+                                width={592}
+                                height={600}
+                                loading="eager"
+                            />
+                            <p>
+                                Obras Civiles -Planta de Briquetas-Orinoco Iron
+                            </p>
+                        </li>
+                        <li class="splide__slide image-container">
+                            <Image
+                                src={image6}
+                                alt="Planta de Briqueras - POSVEN"
+                                width={592}
+                                height={600}
+                                loading="eager"
+                            />
+                            <p>Planta de Briqueras - POSVEN</p>
+                        </li>
+                        <li class="splide__slide image-container">
+                            <Image
+                                src={image7}
+                                alt="Av. Manuel Carlos Piar-San Félix"
+                                width={592}
+                                height={600}
+                                loading="eager"
+                            />
+                            <p>Av. Manuel Carlos Piar-San Félix</p>
+                        </li>
+                        <li class="splide__slide image-container">
+                            <Image
+                                src={image8}
+                                alt="Avenida Guayana Sector San Félix"
+                                width={592}
+                                height={600}
+                                loading="eager"
+                            />
+                            <p>Avenida Guayana Sector San Félix</p>
+                        </li>
+                        <li class="splide__slide image-container">
+                            <Image
+                                src={image9}
+                                alt="Asfaltado de la Avenida y el Puente Angosturita sobre el Rio Caroní."
+                                width={592}
+                                height={600}
+                                loading="eager"
+                            />
+                            <p>
+                                Asfaltado de la Avenida y el Puente Angosturita
+                                sobre el Rio Caroní.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </div>
+
+        <div class="hero-button">
+            <a href="/nosotros"
+                >Nuestra Historia
+                <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M6.75572 11.0909L5.88072 10.2272L9.48299 6.62497H0.153442V5.37497H9.48299L5.88072 1.78406L6.75572 0.909058L11.8466 5.99997L6.75572 11.0909Z"
+                        fill="white"></path>
+                </svg></a
+            >
         </div>
     </div>
 </section>
