@@ -151,7 +151,7 @@ const posts = (await getCollection("blog")).sort(
                 {
                     posts.slice(0, 3).map((post, index) => (
                         <li class={"noticia numero-" + index.toString()}>
-                            <a href={`/morgado-astro/blog/${post.slug}/`}>
+                            <a href={`/blog/${post.slug}/`}>
                                 <div class="image-container">
                                     <img
                                         width={720}
@@ -181,7 +181,7 @@ const posts = (await getCollection("blog")).sort(
                                     </p>
 
                                     <a
-                                        href={`/morgado-astro/blog/${post.slug}/`}
+                                        href={`/blog/${post.slug}/`}
                                         class="button"
                                     >
                                         Leer más ->
