@@ -3,6 +3,11 @@ import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+
+
+import { Image } from "astro:assets";
+
+import caura from "../../images/centro-empresarial-guayana.jpg";
 ---
 
 <style>
@@ -58,10 +63,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
         margin-bottom: 2rem;
     }
 
-    .block-container:nth-child(2) {
-        border: 1px solid red;
-        height: 321px;
-    }
 
     @media only screen and (min-width: 600px) {
         section{
@@ -123,7 +124,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
                 </div>
 
                 <div class="block-container">
-                    <h2>Slider</h2>
+                    <Image
+                    src={caura}
+                    alt="Centro empresarial Caura"
+                    width={1000}
+                    height={700}
+                />
                 </div>
             </div>
         </section>
