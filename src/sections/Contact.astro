@@ -135,7 +135,7 @@
                 </p>
             </div>
     
-            <form action="https://submit-form.com/vdB38RNTP">
+            <form id="contact-form" action="https://submit-form.com/vdB38RNTP" data-botpoison-public-key="pk_e59a4492-8fc6-4dfd-9bb8-fa3c37908b0c">
                 <input
                     type="text"
                     id="name"
@@ -155,6 +155,14 @@
                     name="message"
                     placeholder="Escribe aquí tu mensaje"
                     required=""></textarea>
+                <input
+                    type="text"
+                    name="bot-field"
+                    id="bot-field"
+                    style="display:none"
+                    tabindex="-1"
+                    autocomplete="off"
+                />
                 <button type="submit">Enviar -></button>
             </form>
         </div>
@@ -170,4 +178,13 @@
     </div>
 </section>
 
-<script></script>
+<script src="https://unpkg.com/@botpoison/browser" async></script>
+<script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        const botField = (document.getElementById('bot-field') as HTMLInputElement).value;
+        if (botField) {
+            event.preventDefault();
+            alert('Bot detected!');
+        }
+    });
+</script>
